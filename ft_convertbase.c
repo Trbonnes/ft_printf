@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:38:16 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/18 17:00:57 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/18 17:14:44 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_nbrlen(size_t res_tmp)
 
 	len = 0;
 	base_len = 16;
-	while (res_tmp > base_len)
+	while (res_tmp >= base_len)
 	{
 		len++;
 		res_tmp = res_tmp / base_len;
