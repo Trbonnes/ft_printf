@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/18 16:55:48 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/20 12:48:33 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,9 +146,9 @@ int	main(void)
 	char *ptr;
 
 	ptr = malloc(1);
-	ft = ft_printf("%p %x %X\n", ptr, 256, 216);
-	true = printf("%p %x %X\n", ptr, 256, 216);
+	ft = ft_printf("ft: %d %p %x %X\n", 999, ptr, 256, 216);
+	true = printf("pf: %09d %p %x %X\n", 999, ptr, 256, 216);
 	printf("ft: %d\n", ft);
-	printf("gold standard: %d\n", true);
+	printf("pf: %d\n", true);
 	return (0);
 }
