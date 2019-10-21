@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/21 11:01:09 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/21 12:26:26 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int	ft_flag(va_list *ap, int r_value, char c, char *str)
 {
-	int i;
-	int length[2];
-	int	zero;
+	int		i;
+	size_t	length[2];
+	int		zero;
 
 	i = 0;
 	length[0] = 0;
@@ -30,28 +30,28 @@ int	ft_flag(va_list *ap, int r_value, char c, char *str)
 	else if (str[i++] == '-')
 		length[0] = 2;
 	length[1] = ft_atoi(str + i);
-	r_value = ft_indicconvert(&ap, r_value, c, length);
+	r_value = ft_indicconvert(ap, r_value, c, length);
 	return (r_value);
 }
 
-int	ft_indicconvert(va_list *ap, int r_value, char c, int *length)
+int	ft_indicconvert(va_list *ap, int r_value, char c, size_t *length)
 {
 	if (c == 'c')
-		r_value = ft_printc(ap, r_value);
+		r_value = ft_printc(ap, r_value, length);
 	else if (c == 's')
-		r_value = ft_prints(ap, r_value);
+		r_value = ft_prints(ap, r_value, length);
 	else if (c == 'p')
-		r_value = ft_printp(ap, r_value);
+		r_value = ft_printp(ap, r_value, length);
 	else if (c == 'd')
-		r_value = ft_printdi(ap, r_value);
+		r_value = ft_printdi(ap, r_value, length);
 	else if (c == 'i')
-		r_value = ft_printdi(ap, r_value);
+		r_value = ft_printdi(ap, r_value, length);
 	else if (c == 'u')
-		r_value = ft_printu(ap, r_value);
+		r_value = ft_printu(ap, r_value, length);
 	else if (c == 'x')
-		r_value = ft_printx(ap, r_value, 0);
+		r_value = ft_printx(ap, r_value, 0, length);
 	else if (c == 'X')
-		r_value = ft_printx(ap, r_value, 1);
+		r_value = ft_printx(ap, r_value, 1, length);
 	return (r_value);
 }
 
@@ -94,8 +94,8 @@ int	main(void)
 	char *ptr;
 
 	ptr = malloc(1);
-	ft = ft_printf("ft: %d %p %x %X\n", 999, ptr, 256, 216);
-	true = printf("pf: %9d %p %x %X\n", 999, ptr, 256, 216);
+	ft = ft_printf("ft: %5c\n", 'b');
+	true = printf("pf: %5c\n", 'b');
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	return (0);
