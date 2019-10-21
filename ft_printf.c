@@ -6,31 +6,34 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/21 12:26:26 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/21 14:23:52 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "ft_printf.h"
 
-int	ft_flag(va_list *ap, int r_value, char c, char *str)
+int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 {
-	int		i;
 	size_t	length[2];
-	int		zero;
 
-	i = 0;
 	length[0] = 0;
-	if (str[i] == '0')
+	(*i)++;
+	if (str[*i] == '0')
 	{
 		length[0] = 1;
-		while (str[i] == '0')
-			i++;
+		while (str[*i] == '0')
+			(*i)++;
 	}
-	else if (str[i++] == '-')
+	else if (str[(*i)] == '-')
+	{
 		length[0] = 2;
-	length[1] = ft_atoi(str + i);
-	r_value = ft_indicconvert(ap, r_value, c, length);
+		(*i)++;
+	}
+	length[1] = ft_atoi(str + *i);
+	while (str[*i] >= '0' && str[*i] <= '9')
+		(*i)++;
+	r_value = ft_indicconvert(ap, r_value, str[*i], length);
 	return (r_value);
 }
 
@@ -72,10 +75,11 @@ int	ft_printf(const char *str, ...)
 			{
 				ft_putchar_fd(str[i], 1);
 				r_value++;
+				i++;
 			}
 			else
-				r_value = ft_flag(&ap, r_value, str[i + 1], (str + i + 1));
-			i = i + 2;
+				r_value = ft_flag(&ap, r_value, str, &i);
+			i++;
 		}
 		else
 		{
@@ -94,8 +98,8 @@ int	main(void)
 	char *ptr;
 
 	ptr = malloc(1);
-	ft = ft_printf("ft: %5c\n", 'b');
-	true = printf("pf: %5c\n", 'b');
+	ft = ft_printf("ft: %5c\n", 55);
+	true = printf("pf: %5c\n", 55);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	return (0);
