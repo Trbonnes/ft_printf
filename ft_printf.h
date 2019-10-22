@@ -6,13 +6,13 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/22 08:56:15 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/22 11:10:22 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "libftfolder/libft.h"
+# include "libft/libft.h"
 # include <stdarg.h>
 # include <stdlib.h>
 
