@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/22 08:27:15 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/22 08:35:25 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,14 @@ int	ft_indicconvert(va_list *ap, int r_value, char c, size_t *length)
 	return (r_value);
 }
 
+int	ft_standisplay(const char *str, int *i, int r_value)
+{
+	ft_putchar_fd(str[*i], 1);
+	r_value++;
+	(*i)++;
+	return (r_value);
+}
+
 int	ft_printf(const char *str, ...)
 {
 	int		i;
@@ -72,20 +80,13 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			if ((str[i + 1]) == '%')
-			{
-				ft_putchar_fd(str[i], 1);
-				r_value++;
-				i++;
-			}
+				r_value = ft_standisplay(str, &i, r_value);
 			else
 				r_value = ft_flag(&ap, r_value, str, &i);
 			i++;
 		}
 		else
-		{
-			ft_putchar_fd(str[i++], 1);
-			r_value++;
-		}
+			r_value = ft_standisplay(str, &i, r_value);
 	}
 	va_end(ap);
 	return (r_value);

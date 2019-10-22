@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:38:16 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/18 17:14:44 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/22 09:26:02 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,15 @@ char	*ft_convert_base(size_t nbr)
 
 	base_to = "0123456789abcdef";
 	to_len = 16;
-	result = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1));
-	if (result == NULL)
+	if (nbr == 0)
+	{
+		if (!(result = malloc(sizeof(char) * 2)))
+			return (NULL);
+		result[0] = '0';
+		result[1] = '\0';
+		return (result);
+	}
+	if (!(result = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1))))
 		return (NULL);
 	rev = (ft_nbrlen(nbr));
 	while (nbr > 0)
@@ -45,5 +52,6 @@ char	*ft_convert_base(size_t nbr)
 		result[rev--] = base_to[nbr % to_len];
 		nbr = nbr / to_len;
 	}
+	result[rev] = '\0';
 	return (result);
 }
