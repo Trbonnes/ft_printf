@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/21 15:20:48 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/22 08:27:15 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,18 +89,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(ap);
 	return (r_value);
-}
-
-int	main(void)
-{
-	int ft;
-	int true;
-	char *ptr;
-
-	ptr = malloc(1);
-	ft = ft_printf("ft: %-20p\n", ptr);
-	true = printf("pf: %-20p\n", ptr);
-	printf("ft: %d\n", ft);
-	printf("pf: %d\n", true);
-	return (0);
 }
