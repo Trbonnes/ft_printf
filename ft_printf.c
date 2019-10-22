@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/22 08:35:25 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/22 12:28:49 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	ft_indicconvert(va_list *ap, int r_value, char c, size_t *length)
 		r_value = ft_printx(ap, r_value, 0, length);
 	else if (c == 'X')
 		r_value = ft_printx(ap, r_value, 1, length);
+	else if (c == 'n')
+		r_value = ft_printn(ap, r_value);
 	return (r_value);
 }
 

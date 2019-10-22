@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:26:47 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/22 09:24:57 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/22 12:28:37 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,13 @@ int	ft_printx(va_list *ap, int r_value, int maj, size_t *length)
 	if (length[1] > i)
 		return (r_value + (int)((length[1] - i) + i));
 	return (r_value + (int)i);
+}
+
+int	ft_printn(va_list *ap, int r_value)
+{
+	int *n;
+
+	n = va_arg(*ap, int *);
+	*n = r_value;
+	return (r_value);
 }

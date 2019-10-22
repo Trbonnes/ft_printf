@@ -5,10 +5,12 @@ int	main(void)
 {
 	int ft;
 	int true;
-	char *ptr;
+	//char *ptr;
+	int n;
+	int f;
 
-	ptr = malloc(1);
-	printf("\n///c///\n");
+	//ptr = malloc(1);
+	/*printf("\n///c///\n");
 	ft = ft_printf("ft: %c %5c %-4c\n", 'a', '	', '7');
 	true = printf("pf: %c %5c %-4c\n", 'a', '	', '7');
 	printf("ft: %d\n", ft);
@@ -59,6 +61,13 @@ int	main(void)
 	printf("///%%///\n");
 	ft = ft_printf("ft: %%\n");
 	true = printf("pf: %%\n");
+	printf("ft: %d\n", ft);
+	printf("pf: %d\n", true);
+	printf("\n");*/
+	printf("///n///\n");
+	ft = ft_printf("ft: %s\n %n\n", "0123456789", &n);
+	true = printf("pf: %s\n %n\n", "0123456789", &f);
+	printf("value ft: %d value pf: %d\n", n, f);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
