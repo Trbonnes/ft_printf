@@ -11,21 +11,23 @@ NAME =		libftprintf.a
 LINK = ar rcs
 
 ${NAME}:	${SRCS} ft_printf.h
-			make libft
+			cd libft && make bonus
 			${CC} ${CFLAGS} -I${INCLUDES} -c ${SRCS}
-			${LINK} ${NAME} ${OBJS} libf/libft.a
-			ranlib ${NAME}
+			${LINK} ${NAME} ${OBJS} libft/libft.a
+			ranlib libftprintf.a
 
 all:		${NAME}
 
 test:		${NAME}
-			${CC} ${CFLAGS} libf/libft.a ./libftprintf.a ./main.c 
+			${CC} ${CFLAGS} libft/libft.a ./libftprintf.a ./main.c 
 
 clean:
 			rm -f ${OBJS}
+			cd libft && make clean
 
 fclean:		clean
-			rm -f ${NAME}
+			rm -f ${NAME} a.out
+			cd libft && make fclean
 
 re: 		fclean all
 
