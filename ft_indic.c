@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/22 17:56:21 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 08:29:25 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_printc(va_list *ap, int r_value, size_t *length)
 	r_value++;
 	if (length[1] > 1)
 		return (r_value + (int)((length[1] - 1)));
-	return (r_value + 1);
+	return (r_value);
 }
 
 int	ft_prints(va_list *ap, int r_value, size_t *length)
@@ -57,8 +57,9 @@ int	ft_printdi(va_list *ap, int r_value, size_t *length)
 	{
 		i--;
 		ft_putchar_fd('-', 1);
+		n++;
+		r_value++;
 	}
-	n++;
 	ft_fielddisplay(l, length, i, 0);
 	ft_putstr_fd(n, 1);
 	ft_fielddisplay(l, length, i, 1);
