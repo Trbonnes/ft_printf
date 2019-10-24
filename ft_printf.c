@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 13:32:40 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 14:18:53 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,26 @@ int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 		length[1] = ft_atoi(str + *i);
 	while ((str[*i] >= '0' && str[*i] <= '9') || str[*i] == '*')
 		(*i)++;
+	if (str[*i] == 'l' || str[*i] == 'h')
+		return (r_value = ft_indiclong(ap, r_value, str[++(*i)], length));
 	return (r_value = ft_indicconvert(ap, r_value, str[*i], length));
+}
+
+int	ft_indiclong(va_list *ap, int r_value, char c, size_t *length)
+{
+	if (c == 'c')
+		r_value = ft_printlc(ap, r_value, length);
+	else if (c == 's')
+		r_value = ft_printls(ap, r_value, length);
+	else if (c == 'd')
+		r_value = ft_printldli(ap, r_value, length);
+	else if (c == 'i')
+		r_value = ft_printldli(ap, r_value, length);
+	else if (c == 'u')
+		r_value = ft_printlu(ap, r_value, length);
+	else if (c == 'n')
+		r_value = ft_println(ap, r_value);
+	return (r_value);
 }
 
 int	ft_indicconvert(va_list *ap, int r_value, char c, size_t *length)

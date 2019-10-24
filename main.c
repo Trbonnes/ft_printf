@@ -5,11 +5,11 @@ int	main(void)
 {
 	int ft;
 	int true;
-	char *ptr;
-	int n;
-	int f;
+	//char *ptr;
+	//int n;
+	//int f;
 
-	ptr = malloc(1);
+	/*ptr = malloc(1);
 	printf("\n///c///\n");
 	ft = ft_printf("ft: %c %5c %-4c\n", 'a', '	', '7');
 	true = printf("pf: %c %5c %-4c\n", 'a', '	', '7');
@@ -70,6 +70,21 @@ int	main(void)
 	printf("value ft: %d value pf: %d\n", n, f);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
+	printf("\n");*/
+	printf("\n///lc///\n");
+	ft = ft_printf("ft: %lc %5lc %-4lc\n", L'a', L'	', L'7');
+	true = printf("pf: %lc %5lc %-4lc\n", L'a', L'	', L'7');
+	printf("ft: %d\n", ft);
+	printf("pf: %d\n", true);
 	printf("\n");
+	printf("///ls///\n");
+	ft = ft_printf("ft: %ls %10ls %-8ls\n", L"Bonjour", L"Tristan", L"42");
+	true = printf("pf: %ls %10ls %-8ls\n", L"Bonjour", L"Tristan", L"42");
+	printf("ft: %d\n", ft);
+	printf("pf: %d\n", true);
+	printf("\n");
+	//printf("%lu\n", sizeof(wchar_t));
+	//printf("%ls\n", L"licorne salee");
+	//write(1, L"licorne", sizeof(wchar_t) * 7);
 	return (0);
 }
