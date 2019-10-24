@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 14:18:53 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 15:59:06 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 	else
 		length[1] = ft_atoi(str + *i);
 	while ((str[*i] >= '0' && str[*i] <= '9') || str[*i] == '*')
+		(*i)++;
+	if ((str[*i] == 'l' && str[(*i) + 1] == 'l') ||
+	(str[*i] == 'h' && str[(*i) + 1] == 'h'))
 		(*i)++;
 	if (str[*i] == 'l' || str[*i] == 'h')
 		return (r_value = ft_indiclong(ap, r_value, str[++(*i)], length));

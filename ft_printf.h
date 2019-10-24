@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 14:06:40 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 15:30:21 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int		ft_flagplus(const char *str, int *i, int check);
 int		ft_flagz(const char *str, int *i);
 size_t	ft_nbrlen(size_t res_tmp);
 char	*ft_convert_base(size_t nbr);
+char	*ft_longitoa(long long int n);
 
 #endif

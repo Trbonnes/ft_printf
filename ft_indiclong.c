@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 13:59:19 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 15:02:28 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 16:55:12 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_printldli(va_list *ap, int r_value, size_t *length)
 	size_t	l;
 
 	l = 0;
-	n = ft_itoa(va_arg(*ap, int));
+	n = ft_longitoa(va_arg(*ap, long long int));
 	i = ft_strlen(n);
 	if (n[0] == '-' && (length[0] == 1 || length[0] == 3))
 	{
@@ -74,9 +74,12 @@ int	ft_printldli(va_list *ap, int r_value, size_t *length)
 	else if (n[0] != '-' && length[2] == 1)
 	{
 		i++;
+		if (length[0] == 0)
+			ft_fielddisplay(l, length, i, 0);
 		ft_putchar_fd('+', 1);
 	}
-	ft_fielddisplay(l, length, i, 0);
+	if (length[2] != 1 || length[0] != 0)
+		ft_fielddisplay(l, length, i, 0);
 	ft_putstr_fd(n, 1);
 	ft_fielddisplay(l, length, i, 1);
 	if (length[1] > i)
@@ -91,7 +94,7 @@ int	ft_printlu(va_list *ap, int r_value, size_t *length)
 	size_t	l;
 
 	l = 0;
-	n = ft_itoa(va_arg(*ap, unsigned int));
+	n = ft_longitoa(va_arg(*ap, unsigned long long int));
 	i = ft_strlen(n);
 	ft_fielddisplay(l, length, i, 0);
 	ft_putstr_fd(n, 1);
@@ -103,9 +106,9 @@ int	ft_printlu(va_list *ap, int r_value, size_t *length)
 
 int	ft_println(va_list *ap, int r_value)
 {
-	int *n;
+	long long int *n;
 
-	n = va_arg(*ap, int *);
+	n = va_arg(*ap, long long int *);
 	*n = r_value;
 	return (r_value);
 }
