@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/22 15:02:58 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 13:32:40 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,11 @@
 
 int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 {
-	size_t	length[2];
+	size_t	length[3];
 
-	length[0] = 0;
 	(*i)++;
-	if (str[*i] == '0')
-	{
-		length[0] = 1;
-		while (str[*i] == '0')
-			(*i)++;
-	}
-	else if (str[(*i)] == '-')
+	length[2] = ft_flagplus(str, i, 0);
+	if (!(length[0] = ft_flagz(str, i)) && str[(*i)] == '-')
 		length[0] = 2;
 	else if (str[(*i)] == '.')
 		length[0] = 3;
@@ -33,14 +27,14 @@ int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 		length[0] = 4;
 	if (length[0] > 1)
 		(*i)++;
+	length[2] = ft_flagplus(str, i, length[2]);
 	if (str[(*i)] == '*')
 		length[1] = (size_t)va_arg(*ap, int);
 	else
 		length[1] = ft_atoi(str + *i);
 	while ((str[*i] >= '0' && str[*i] <= '9') || str[*i] == '*')
 		(*i)++;
-	r_value = ft_indicconvert(ap, r_value, str[*i], length);
-	return (r_value);
+	return (r_value = ft_indicconvert(ap, r_value, str[*i], length));
 }
 
 int	ft_indicconvert(va_list *ap, int r_value, char c, size_t *length)
@@ -63,14 +57,6 @@ int	ft_indicconvert(va_list *ap, int r_value, char c, size_t *length)
 		r_value = ft_printx(ap, r_value, 1, length);
 	else if (c == 'n')
 		r_value = ft_printn(ap, r_value);
-	return (r_value);
-}
-
-int	ft_standisplay(const char *str, int *i, int r_value)
-{
-	ft_putchar_fd(str[*i], 1);
-	r_value++;
-	(*i)++;
 	return (r_value);
 }
 
