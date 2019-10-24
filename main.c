@@ -5,13 +5,15 @@ int	main(void)
 {
 	int ft;
 	int true;
-	//char *ptr;
+	char *ptr;
+	int l;
+	int k;
 	long long int n;
 	long long int f;
 	long int a;
 	long int b;
 
-	/*ptr = malloc(1);
+	ptr = malloc(1);
 	printf("\n///c///\n");
 	ft = ft_printf("ft: %c %5c %-4c\n", 'a', '	', '7');
 	true = printf("pf: %c %5c %-4c\n", 'a', '	', '7');
@@ -29,7 +31,7 @@ int	main(void)
 	true = printf("pf: %p %15p %-15p\n", ptr, ptr, ptr);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 	printf("///d///\n");
 	ft = ft_printf("ft: %.*d %7d %-9d %05d\n", 8, -256, 1024, 0, 29);
 	true = printf("pf: %.*d %7d %-9d %05d\n", 8, -256, 1024, 0, 29);
@@ -42,7 +44,7 @@ int	main(void)
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
-	/*printf("///u///\n");
+	printf("///u///\n");
 	ft = ft_printf("ft: %u %7u %-9u %05u\n", 256, 1024, 0, 29);
 	true = printf("pf: %u %7u %-9u %05u\n", 256, 1024, 0, 29);
 	printf("ft: %d\n", ft);
@@ -67,12 +69,12 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///n///\n");
-	ft = ft_printf("ft: %s\n %n\n", "0123456789", &n);
-	true = printf("pf: %s\n %n\n", "0123456789", &f);
-	printf("value ft: %d value pf: %d\n", n, f);
+	ft = ft_printf("ft: %s\n %n\n", "0123456789", &l);
+	true = printf("pf: %s\n %n\n", "0123456789", &k);
+	printf("value ft: %d value pf: %d\n", l, k);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 	printf("\n///lc///\n");
 	ft = ft_printf("ft: %lc %5lc %-4lc\n", L'a', L'	', L'7');
 	true = printf("pf: %lc %5lc %-4lc\n", L'a', L'	', L'7');
