@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 08:29:25 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 10:38:10 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_printdi(va_list *ap, int r_value, size_t *length)
 	l = 0;
 	n = ft_itoa(va_arg(*ap, int));
 	i = ft_strlen(n);
-	if (n[0] == '-')
+	if (n[0] == '-' && (length[0] == 1 || length[0] == 3))
 	{
 		i--;
 		ft_putchar_fd('-', 1);
