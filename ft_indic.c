@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 16:54:57 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 17:19:19 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 
 int	ft_printc(va_list *ap, int r_value, size_t *length)
 {
-	size_t l;
-
-	l = 0;
-	ft_fielddisplay(l, length, 1, 0);
+	ft_fielddisplay(length, 1, 0);
 	ft_putchar_fd(va_arg(*ap, int), 1);
-	ft_fielddisplay(l, length, 1, 1);
+	ft_fielddisplay(length, 1, 1);
 	r_value++;
 	if (length[1] > 1)
 		return (r_value + (int)((length[1] - 1)));
@@ -31,14 +28,12 @@ int	ft_prints(va_list *ap, int r_value, size_t *length)
 {
 	char	*str;
 	size_t	i;
-	size_t	l;
 
-	l = 0;
 	str = va_arg(*ap, char *);
 	i = ft_strlen(str);
-	ft_fielddisplay(l, length, i, 0);
+	ft_fielddisplay(length, i, 0);
 	ft_putstr_fd(str, 1);
-	ft_fielddisplay(l, length, i, 1);
+	ft_fielddisplay(length, i, 1);
 	if (length[1] > i)
 		return (r_value + (int)((length[1] - i) + i));
 	return (r_value + (int)i);
@@ -48,9 +43,7 @@ int	ft_printdi(va_list *ap, int r_value, size_t *length)
 {
 	char	*n;
 	size_t	i;
-	size_t	l;
 
-	l = 0;
 	n = ft_itoa(va_arg(*ap, int));
 	i = ft_strlen(n);
 	if (n[0] == '-' && (length[0] == 1 || length[0] == 3))
@@ -62,15 +55,14 @@ int	ft_printdi(va_list *ap, int r_value, size_t *length)
 	}
 	else if (n[0] != '-' && length[2] == 1)
 	{
-		i++;
-		if (length[0] == 0)
-			ft_fielddisplay(l, length, i, 0);
+		if (length[0] == 0 && i++ >= 0)
+			ft_fielddisplay(length, i, 0);
 		ft_putchar_fd('+', 1);
 	}
 	if (length[2] != 1 || length[0] != 0)
-		ft_fielddisplay(l, length, i, 0);
+		ft_fielddisplay(length, i, 0);
 	ft_putstr_fd(n, 1);
-	ft_fielddisplay(l, length, i, 1);
+	ft_fielddisplay(length, i, 1);
 	if (length[1] > i)
 		return (r_value + (int)((length[1] - i) + i));
 	return (r_value + (int)i);
@@ -82,17 +74,15 @@ int	ft_printp(va_list *ap, int r_value, size_t *length)
 	void	*ptr;
 	size_t	add;
 	size_t	i;
-	size_t	l;
 
-	l = 0;
 	ptr = va_arg(*ap, void *);
 	add = (size_t)ptr;
 	str = ft_convert_base(add);
 	i = ft_strlen(str) + 2;
-	ft_fielddisplay(l, length, i, 0);
+	ft_fielddisplay(length, i, 0);
 	ft_putstr_fd("0x", 1);
 	ft_putstr_fd(str, 1);
-	ft_fielddisplay(l, length, i, 1);
+	ft_fielddisplay(length, i, 1);
 	if (length[1] > i)
 		return (r_value + (int)((length[1] - i) + i));
 	return (r_value + (int)i);
@@ -102,14 +92,12 @@ int	ft_printu(va_list *ap, int r_value, size_t *length)
 {
 	char	*n;
 	size_t	i;
-	size_t	l;
 
-	l = 0;
 	n = ft_itoa(va_arg(*ap, unsigned int));
 	i = ft_strlen(n);
-	ft_fielddisplay(l, length, i, 0);
+	ft_fielddisplay(length, i, 0);
 	ft_putstr_fd(n, 1);
-	ft_fielddisplay(l, length, i, 1);
+	ft_fielddisplay(length, i, 1);
 	if (length[1] > i)
 		return (r_value + (int)((length[1] - i) + i));
 	return (r_value + (int)i);

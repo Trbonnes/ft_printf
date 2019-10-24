@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:51:27 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 13:32:33 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 17:13:57 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ int		ft_standisplay(const char *str, int *i, int r_value)
 	return (r_value);
 }
 
-void	ft_fielddisplay(size_t l, size_t *length, size_t i, int bool)
+void	ft_fielddisplay(size_t *length, size_t i, int bool)
 {
+	size_t l;
+
+	l = 0;
 	if (length[1] > i && bool == 0)
 		if (length[0] == 0)
 			while (l++ < (length[1] - i))

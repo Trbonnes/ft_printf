@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 15:30:21 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/24 17:15:27 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_printldli(va_list *ap, int r_value, size_t *length);
 int		ft_printlu(va_list *ap, int r_value, size_t *length);
 int		ft_println(va_list *ap, int r_value);
 int		ft_standisplay(const char *str, int *i, int r_value);
-void	ft_fielddisplay(size_t l, size_t *length, size_t i, int bool);
+void	ft_fielddisplay(size_t *length, size_t i, int bool);
 int		ft_flagplus(const char *str, int *i, int check);
 int		ft_flagz(const char *str, int *i);
 size_t	ft_nbrlen(size_t res_tmp);
