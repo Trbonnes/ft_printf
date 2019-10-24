@@ -36,7 +36,7 @@ int	main(void)
 	printf("\n");
 	printf("///i///\n");
 	ft = ft_printf("ft: %i %7i %-9i %05i\n", 256, 1024, 0, 29);
-	true = printf("pf: %i %7i %-9i %05i\n", 256, 1024, 0, 29);
+	true = printf("pf: %+i %+7i %-9i %+05i\n", 256, 1024, 0, 29);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
