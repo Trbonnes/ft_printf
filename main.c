@@ -8,11 +8,11 @@ int	main(void)
 	char *ptr;
 	int l;
 	int k;
-	/*long long int n;
+	long long int n;
 	long long int f;
 	long int a;
 	long int b;
-	short int c;
+	/*short int c;
 	short int d;*/
 
 	ptr = malloc(1);
@@ -78,7 +78,7 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 
-	/*printf("\n///lc///\n");
+	printf("\n///lc///\n");
 	ft = ft_printf("ft: %lc %5lc %-4lc\n", L'a', L'	', L'7');
 	true = printf("pf: %lc %5lc %-4lc\n", L'a', L'	', L'7');
 	printf("ft: %d\n", ft);
@@ -139,7 +139,7 @@ int	main(void)
 	printf("value ft: %lld value pf: %lld\n", n, f);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 
 	/*printf("///hd///\n");
 	ft = ft_printf("ft: %.*hd %7hd %-9hd %05hd\n", 8, -18, 18, 18, 18);
