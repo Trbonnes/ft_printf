@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_longitoa.c                                      :+:      :+:    :+:   */
+/*   ft_unsigned_itoa.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 15:24:20 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/25 10:23:40 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/25 10:24:06 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/25 10:28:49 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static long long int	ft_size(long long int tmp, long long int size)
+static unsigned long long int	ft_size(unsigned long long int tmp,
+unsigned long long int size)
 {
 	while (tmp > 0)
 	{
@@ -33,8 +34,8 @@ static char				*ft_zero(void)
 	return (str);
 }
 
-static char				*ft_fullup(long long int tmp, long long int size,
-int neg, long long int n)
+static char				*ft_fullup(unsigned long long int tmp,
+unsigned long long int size, unsigned long long int n)
 {
 	char	*str;
 	int		i;
@@ -46,37 +47,25 @@ int neg, long long int n)
 		if (!(str = malloc(sizeof(char) * size + 1)))
 			return (NULL);
 		i = size - 1;
-		if (neg == -2)
-			str[i--] = '8';
 		while (tmp > 0)
 		{
 			str[i--] = ((tmp % 10) + '0');
 			tmp = tmp / 10;
 		}
-		if (neg < 0)
-			str[0] = '-';
 		str[size] = '\0';
 	}
 	return (str);
 }
 
-char					*ft_longitoa(long long int n)
+char					*ft_unsigneditoa(unsigned long long int n)
 {
-	char				*str;
-	int					neg;
-	long long int		size;
-	long long int		tmp;
+	char						*str;
+	unsigned long long int		size;
+	unsigned long long int		tmp;
 
-	neg = 1;
 	size = 0;
-	if (n < 0)
-	{
-		neg = -1;
-		n = -n;
-		size++;
-	}
 	tmp = n;
 	size = ft_size(tmp, size);
-	str = ft_fullup(tmp, size, neg, n);
+	str = ft_fullup(tmp, size, n);
 	return (str);
 }

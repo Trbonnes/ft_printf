@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 13:59:19 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 17:52:28 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/25 10:32:29 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	ft_printlu(va_list *ap, int r_value, size_t *length)
 	char	*n;
 	size_t	i;
 
-	n = ft_longitoa(va_arg(*ap, unsigned long long int));
+	n = ft_unsigneditoa(va_arg(*ap, unsigned int));
 	i = ft_strlen(n);
 	ft_fielddisplay(length, i, 0);
 	ft_putstr_fd(n, 1);
