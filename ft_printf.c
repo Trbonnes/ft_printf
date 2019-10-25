@@ -6,17 +6,35 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/25 12:08:25 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/25 16:21:41 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "ft_printf.h"
 
+void	ft_schlag(size_t **flag)
+{
+//	printf("flag[0][0]: %zu\n", flag[0][0]);
+	printf("flag[1][0]: %zu\n", flag[1][0]);
+//	printf("flag[2][0]: %zu\n", flag[2][0]);
+//	printf("flag[3][0]: %zu\n", flag[3][0]);
+//	printf("flag[4][0]: %zu\n", flag[4][0]);
+	printf("flag[5][0]: %zu\n", flag[5][0]);
+//	printf("flag[0][1]: %zu\n", flag[0][1]);
+	printf("flag[1][1]: %zu\n", flag[1][1]);
+//	printf("flag[2][1]: %zu\n", flag[2][1]);
+//	printf("flag[3][1]: %zu\n", flag[3][1]);
+//	printf("flag[4][1]: %zu\n", flag[4][1]);
+	printf("flag[5][1]: %zu\n", flag[5][1]);
+}
+
 int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 {
-	size_t	flag[6][2];
+	size_t	**flag;
 
+	if (!(flag = ft_flaglock()))
+		return (-1);
 	(*i)++;
 	flag[0][0] = ft_flagspace(str, i);
 	flag[1][0] = ft_flagz(str, i);
@@ -24,36 +42,22 @@ int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 	flag[3][0] = ft_flaghash(str, i);
 	flag[4][0] = ft_flagmoins(str, i);
 	flag[5][0] = ft_flagplus(str, i);
-
-	flag[0][1] = ft_flagspacesize(ap, str, i);
-	flag[1][1] = ft_flagzsizesize(ap, str, i);
-	flag[2][1] = ft_flagpresize(ap, str, i);
+	flag[0][1] = ft_flagspacesize(ap, str, i, flag[0][0]);
+	flag[1][1] = ft_flagzsize(ap, str, i, flag[1][0]);
+	flag[2][1] = ft_flagpresize(ap, str, i, flag[2][0]);
 	flag[3][1] = 0;
-	flag[4][1] = ft_flagmoinssize(ap, str, i);
+	flag[4][1] = 0;
 	flag[5][1] = 0;
-
-	if (!(flag[0] = ft_flagz(str, i)) && str[(*i)] == '-')
-		flag[0] = 2;
-	else if (str[(*i)] == '.')
-		flag[0] = 3;
-	else if (str[*i] == '#')
-		flag[0] = 4;
-	if (flag[0] > 1)
+	ft_schlag(flag);
+	while (!ft_isalpha(str[*i]))
 		(*i)++;
-	flag[2] = ft_flagplus(str, i, flag[2]);
-	if (str[(*i)] == '*')
-		flag[1] = (size_t)va_arg(*ap, int);
-	else
-		flag[1] = ft_atoi(str + *i);
-
-
 	while ((str[*i] >= '0' && str[*i] <= '9') || str[*i] == '*')
 		(*i)++;
-	if ((str[*i] == 'l' && str[(*i) + 1] == 'l') ||
+	/*if ((str[*i] == 'l' && str[(*i) + 1] == 'l') ||
 	(str[*i] == 'h' && str[(*i) + 1] == 'h'))
 		(*i)++;
 	if (str[*i] == 'l' || str[*i] == 'h')
-		return (r_value = ft_indiclong(ap, r_value, str[++(*i)], flag));
+		return (r_value = ft_indiclong(ap, r_value, str[++(*i)], flag));*/
 	return (r_value = ft_indicconvert(ap, r_value, str[*i], flag));
 }
 

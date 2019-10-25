@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:26:47 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/25 11:18:20 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/25 14:49:57 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_printx(va_list *ap, int r_value, int maj, size_t **flag)
 	char	*str;
 	size_t	nb;
 	size_t	i;
+	size_t	length;
 
 	i = -1;
 	nb = (size_t)va_arg(*ap, unsigned int);
@@ -27,12 +28,13 @@ int	ft_printx(va_list *ap, int r_value, int maj, size_t **flag)
 			str[i] = ft_toupper((int)str[i]);
 	i = ft_strlen(str);
 	ft_fielddisplay(flag, i, 0);
-	if (flag[0] == 4 && i++ && i++)
+	if (flag[3][0] && i++ && i++)
 		ft_putstr_fd("0x", 1);
 	ft_putstr_fd(str, 1);
 	ft_fielddisplay(flag, i, 1);
-	if (flag[1] > i)
-		return (r_value + (int)((flag[1] - i) + i));
+	length = ft_length(flag);
+	if (length > i)
+		return (r_value + (int)length);
 	return (r_value + (int)i);
 }
 
