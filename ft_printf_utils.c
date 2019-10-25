@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:51:27 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/24 17:45:33 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/25 11:48:13 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,48 +21,21 @@ int		ft_standisplay(const char *str, int *i, int r_value)
 	return (r_value);
 }
 
-void	ft_fielddisplay(size_t *length, size_t i, int bool)
+void	ft_fielddisplay(size_t **flag, size_t i, int bool)
 {
 	size_t l;
 
 	l = 0;
-	if (length[1] > i && bool == 0)
-		if (length[0] == 0)
-			while (l++ < (length[1] - i))
-				ft_putchar_fd(' ', 1);
-	if (length[1] > i && bool == 0)
-		if (length[0] == 1)
-			while (l++ < (length[1] - i))
-				ft_putchar_fd('0', 1);
-	if (length[1] > i && bool == 0)
-		if (length[0] == 3)
-			while (l++ < (length[1] - i))
-				ft_putchar_fd('0', 1);
-	if (length[1] > i && bool == 1)
-		if (length[0] == 2)
-			while (l++ < (length[1] - i))
-				ft_putchar_fd(' ', 1);
-}
-
-int		ft_flagplus(const char *str, int *i, int check)
-{
-	if (str[*i] == '+')
-	{
-		(*i)++;
-		return (1);
-	}
-	if (check == 1)
-		return (1);
-	return (0);
-}
-
-int		ft_flagz(const char *str, int *i)
-{
-	if (str[*i] == '0')
-	{
-		while (str[*i] == '0')
-			(*i)++;
-		return (1);
-	}
-	return (0);
+	if (flag[1] > i && bool == 0 && flag[0] == 0)
+		while (l++ < (flag[1] - i))
+			ft_putchar_fd(' ', 1);
+	if (flag[1] > i && bool == 0 && flag[0] == 1)
+		while (l++ < (flag[1] - i))
+			ft_putchar_fd('0', 1);
+	if (flag[1] > i && bool == 0 && flag[0] == 3)
+		while (l++ < (flag[1] - i))
+			ft_putchar_fd('0', 1);
+	if (flag[1] > i && bool == 1 && flag[0] == 2)
+		while (l++ < (flag[1] - i))
+			ft_putchar_fd(' ', 1);
 }
