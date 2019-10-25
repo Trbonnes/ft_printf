@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/25 16:21:41 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/25 16:45:15 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 	flag[3][1] = 0;
 	flag[4][1] = 0;
 	flag[5][1] = 0;
-	ft_schlag(flag);
+	//ft_schlag(flag);
 	while (!ft_isalpha(str[*i]))
 		(*i)++;
 	while ((str[*i] >= '0' && str[*i] <= '9') || str[*i] == '*')
