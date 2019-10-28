@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 11:57:41 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 13:47:32 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,15 @@ int	ft_prints(va_list *ap, int r_value, size_t **flag)
 	size_t	length;
 
 	str = va_arg(*ap, char *);
-	i = ft_strlen(str);
 	if (!flag[2][0])
-	{
-		ft_fielddisplay(flag, i, 0, 0);
-		ft_putstr_fd(str, 1);
-	}
+		i = ft_strlen(str);
 	else
-	{
 		i = flag[2][1];
-		ft_fielddisplay(flag, i, 0, 0);
-		if (!(cpy = malloc(sizeof(char) * i + 1)))
-			return (-1);
-		ft_strlcpy(cpy, str, i + 1);
-		ft_putstr_fd(cpy, 1);
-	}
+	ft_fielddisplay(flag, i, 0, 0);
+	if (!(cpy = malloc(sizeof(char) * i + 1)))
+		return (-1);
+	ft_strlcpy(cpy, str, i + 1);
+	ft_putstr_fd(cpy, 1);
 	ft_fielddisplay(flag, i, 1, 0);
 	length = ft_length(flag);
 	if (length > i)
@@ -75,13 +69,7 @@ int	ft_printdi(va_list *ap, int r_value, size_t **flag)
 		r_value++;
 	}
 	else if (n[0] != '-' && flag[5][0])
-	{
-		if (++i >= 0 && flag[0][0] && !flag[1][0])
-			ft_fielddisplay(flag, i, 0, neg);
-		ft_putchar_fd('+', 1);
-		if (flag[1][0])
-			ft_fielddisplay(flag, i, 0, neg);
-	}
+		ft_plusdisplay(&i, flag, neg);
 	if (!flag[5][0] || !flag[0][0])
 		ft_fielddisplay(flag, i, 0, neg);
 	ft_putstr_fd(n, 1);
