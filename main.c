@@ -5,17 +5,17 @@ int	main(void)
 {
 	int ft;
 	int true;
-	char *ptr;
-	int l;
-	int k;
-	long long int n;
-	long long int f;
-	long int a;
-	long int b;
+//	char *ptr;
+//	int l;
+//	int k;
+//	long long int n;
+//	long long int f;
+//	long int a;
+//	long int b;
 	//short int c;
 	//short int d;
 
-	ptr = malloc(1);
+	/*ptr = malloc(1);
 	printf("\n///c///\n");
 	ft = ft_printf("ft: %c %5c %-4c\n", 'a', '	', '7');
 	true = printf("pf: %c %5c %-4c\n", 'a', '	', '7');
@@ -33,14 +33,14 @@ int	main(void)
 	true = printf("pf: %p %15p %-15p\n", ptr, ptr, ptr);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");
+	printf("\n");*/
 	printf("///d///\n");
-	ft = ft_printf("ft: %.*d %7d %-9d %05d\n", 8, -256, 1024, 0, 29);
-	true = printf("pf: %.*d %7d %-9d %05d\n", 8, -256, 1024, 0, 29);
+	ft = ft_printf("ft: %12.*d %7d %-9d %05d\n", 8, -256, 1024, 0, 29);
+	true = printf("pf: %12.*d %7d %-9d %05d\n", 8, -256, 1024, 0, 29);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
-	printf("///i///\n");
+	/*printf("///i///\n");
 	ft = ft_printf("ft: %+i %+7i %-+9i %0+5i\n", 256, 18, -1024, 29);
 	true = printf("pf: %+i %+7i %-+9i %0+5i\n", 256, 18, -1024, 29);
 	printf("ft: %d\n", ft);
@@ -116,8 +116,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///lld///\n");
-	ft = ft_printf("ft: %.*lld %7lld %-9lld %05lld\n", 8, -18ll, 18ll, 18ll, 18ll);
-	true = printf("pf: %.*lld %7lld %-9lld %05lld\n", 8, -18ll, 18ll, 18ll, 18ll);
+	ft = ft_printf("ft: %10.*lld %7lld %-9lld %05lld\n", 8, -18ll, 18ll, 18ll, 18ll);
+	true = printf("pf: %10.*lld %7lld %-9lld %05lld\n", 8, -18ll, 18ll, 18ll, 18ll);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -139,7 +139,7 @@ int	main(void)
 	printf("value ft: %lld value pf: %lld\n", n, f);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");
+	printf("\n");*/
 
 	/*printf("///hd///\n");
 	ft = ft_printf("ft: %.*hd %7hd %-9hd %05hd\n", 8, (short)-18, (short)18, (short)18, (short)18);
@@ -169,7 +169,7 @@ int	main(void)
 	//printf("%ls\n", L"licorne salee");
 	//write(1, L"licorne", sizeof(wchar_t) * 7)
 
-	printf("\n///TEST///\n");
+	/*printf("\n///TEST///\n");
 	printf("\n");
 	ft_printf("FT String precision (1.9): %1.9s.\n", "Hello");
 	printf("PF String precision (1.9): %1.9s.\n\n", "Hello");
@@ -215,6 +215,6 @@ int	main(void)
 	printf("PF Int pad width with *: %*d.\n\n", 5, 18);
 
 	ft_printf("FT Int pad and precision with *: %*.*d.\n", 10, 5, -18);
-	printf("PF Int pad and precision with *: %*.*d.\n\n", 10, 5, -18);
+	printf("PF Int pad and precision with *: %*.*d.\n\n", 10, 5, -18);*/
 	return (0);
 }

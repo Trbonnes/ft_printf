@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 13:47:32 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 15:01:06 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_printc(va_list *ap, int r_value, size_t **flag)
 	ft_putchar_fd(va_arg(*ap, int), 1);
 	r_value++;
 	ft_fielddisplay(flag, 1, 1, 0);
-	length = ft_length(flag);
+	length = ft_length(flag, 0);
 	if (length > 1)
 		return (r_value + (int)((length - 1)));
 	return (r_value);
@@ -45,7 +45,7 @@ int	ft_prints(va_list *ap, int r_value, size_t **flag)
 	ft_strlcpy(cpy, str, i + 1);
 	ft_putstr_fd(cpy, 1);
 	ft_fielddisplay(flag, i, 1, 0);
-	length = ft_length(flag);
+	length = ft_length(flag, 0);
 	if (length > i)
 		return (r_value + (int)length);
 	return (r_value + (int)i);
@@ -74,7 +74,7 @@ int	ft_printdi(va_list *ap, int r_value, size_t **flag)
 		ft_fielddisplay(flag, i, 0, neg);
 	ft_putstr_fd(n, 1);
 	ft_fielddisplay(flag, i, 1, neg);
-	length = ft_length(flag);
+	length = ft_length(flag, neg);
 	if (length > i)
 		return (r_value + (int)length);
 	return (r_value + (int)i);
@@ -96,7 +96,7 @@ int	ft_printp(va_list *ap, int r_value, size_t **flag)
 	ft_putstr_fd("0x", 1);
 	ft_putstr_fd(str, 1);
 	ft_fielddisplay(flag, i, 1, 0);
-	length = ft_length(flag);
+	length = ft_length(flag, 0);
 	if (length > i)
 		return (r_value + (int)length);
 	return (r_value + (int)i);
@@ -113,7 +113,7 @@ int	ft_printu(va_list *ap, int r_value, size_t **flag)
 	ft_fielddisplay(flag, i, 0, 0);
 	ft_putstr_fd(n, 1);
 	ft_fielddisplay(flag, i, 1, 0);
-	length = ft_length(flag);
+	length = ft_length(flag, 0);
 	if (length > i)
 		return (r_value + (int)length);
 	return (r_value + (int)i);
