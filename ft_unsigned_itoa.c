@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 10:24:06 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/25 10:28:49 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 08:10:31 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ unsigned long long int size)
 	return (size);
 }
 
-static char				*ft_zero(void)
+static char						*ft_zero(void)
 {
 	char	*str;
 
@@ -34,7 +34,7 @@ static char				*ft_zero(void)
 	return (str);
 }
 
-static char				*ft_fullup(unsigned long long int tmp,
+static char						*ft_fullup(unsigned long long int tmp,
 unsigned long long int size, unsigned long long int n)
 {
 	char	*str;
@@ -57,7 +57,7 @@ unsigned long long int size, unsigned long long int n)
 	return (str);
 }
 
-char					*ft_unsigneditoa(unsigned long long int n)
+char							*ft_unsigneditoa(unsigned long long int n)
 {
 	char						*str;
 	unsigned long long int		size;

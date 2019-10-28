@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/25 17:05:59 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 11:09:50 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 void	ft_schlag(size_t **flag)
 {
-//	printf("flag[0][0]: %zu\n", flag[0][0]);
-	printf("flag[1][0]: %zu\n", flag[1][0]);
+	printf("flag[0][0]: %zu\n", flag[0][0]);
+//	printf("flag[1][0]: %zu\n", flag[1][0]);
 //	printf("flag[2][0]: %zu\n", flag[2][0]);
 //	printf("flag[3][0]: %zu\n", flag[3][0]);
 //	printf("flag[4][0]: %zu\n", flag[4][0]);
-	printf("flag[5][0]: %zu\n", flag[5][0]);
+//	printf("flag[5][0]: %zu\n", flag[5][0]);
 //	printf("flag[0][1]: %zu\n", flag[0][1]);
-	printf("flag[1][1]: %zu\n", flag[1][1]);
+//	printf("flag[1][1]: %zu\n", flag[1][1]);
 //	printf("flag[2][1]: %zu\n", flag[2][1]);
 //	printf("flag[3][1]: %zu\n", flag[3][1]);
 //	printf("flag[4][1]: %zu\n", flag[4][1]);
-	printf("flag[5][1]: %zu\n", flag[5][1]);
+//	printf("flag[5][1]: %zu\n", flag[5][1]);
 }
 
 int	ft_flag(va_list *ap, int r_value, const char *str, int *i)

@@ -3,7 +3,7 @@
 
 int	main(void)
 {
-	int ft;
+	/*int ft;
 	int true;
 	char *ptr;
 	int l;
@@ -165,8 +165,56 @@ int	main(void)
 	printf("vahue ft: %hd vahue pf: %hd\n", c, d);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");
+	printf("\n");*/
 	//printf("%ls\n", L"licorne salee");
 	//write(1, L"licorne", sizeof(wchar_t) * 7)
+
+	printf("\n///TEST///\n");
+	printf("\n");
+	ft_printf("FT String precision (1.9): %1.9s.\n", "Hello");
+	printf("PF String precision (1.9): %1.9s.\n\n", "Hello");
+
+	ft_printf("FT String precision (2.1): %2.1s.\n", "Hello");
+	printf("PF String precision (2.1): %2.1s.\n\n", "Hello");
+
+	ft_printf("FT String precision (5.1): %5.1s.\n", "Hello");
+	printf("PF String precision (5.1): %5.1s.\n\n", "Hello");
+
+	ft_printf("FT String precision (5.3): %5.3s.\n", "Hello");
+	printf("PF String precision (5.3): %5.3s.\n\n", "Hello");
+
+	ft_printf("FT String precision (4.4): %4.4s.\n", "Hello");
+	printf("PF String precision (4.4): %4.4s.\n\n", "Hello");
+
+	ft_printf("FT String precision (5.4): %5.4s.\n", "Hello");
+	printf("PF String precision (5.4): %5.4s.\n\n", "Hello");
+
+	printf("FT String precision (9.2): %9.2s.\n", "Hello");
+	printf("PF String precision (9.2): %9.2s.\n\n", "Hello");
+
+	ft_printf("FT String precision (5.2): %5.2s.\n", "Hello");
+	printf("PF String precision (5.2): %5.2s.\n\n", "Hello");
+
+
+	ft_printf("FT Int precision with padding (10.5): %10.5d.\n", 5);
+	printf("PF Int precision with padding (10.5): %10.5d.\n\n", 5);
+
+	ft_printf("FT Int precision with zero padding (10.5): %010.5d.\n", 5);
+	printf("PF Int precision with zero padding (10.5): %010.5d.\n\n", 5);
+
+	ft_printf("FT Int precision with padding (4.2): %4.2d.\n", 500);
+	printf("PF Int precision with padding (4.2): %4.2d.\n\n", 500);
+
+	ft_printf("FT Int precision with padding (5.10): %5.10d.\n", 5);
+	printf("PF Int precision with padding (5.10): %5.10d.\n\n", 5);
+
+	ft_printf("FT Int precision with negative padding (10.5): %-10.5d.\n", 5);
+	printf("PF Int precision with negative padding (10.5): %-10.5d.\n\n", 5);
+
+	ft_printf("ft Int pad width with *: %*d.\n", 5, 18);
+	printf("PF Int pad width with *: %*d.\n\n", 5, 18);
+
+	ft_printf("FT Int pad and precision with *: %*.*d.\n", 10, 5, 18);
+	printf("PF Int pad and precision with *: %*.*d.\n\n", 10, 5, 18);
 	return (0);
 }
