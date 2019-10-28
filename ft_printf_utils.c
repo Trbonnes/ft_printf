@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:51:27 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 11:15:59 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 11:33:58 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,27 @@ size_t	ft_length(size_t **flag)
 	if (flag[2][1])
 		length = length + flag[2][1];
 	return (length);
+}
+
+size_t		ft_strllcpy(wchar_t *dest, wchar_t *src, size_t n)
+{
+	unsigned int i;
+	unsigned int count;
+
+	i = 0;
+	count = 0;
+	if (!dest || !src)
+		return (0);
+	while (src[count] != '\0')
+		count++;
+	if (n == 0)
+		return (count);
+	while (i < n - 1 && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	if (n > 1)
+		dest[i] = '\0';
+	return (count);
 }

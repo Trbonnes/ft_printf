@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 10:58:24 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 11:34:30 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	ft_fielddisplay(size_t **flag, size_t i, int bool);
 void	ft_displaypres(size_t **flag, size_t i, int bool);
 int		ft_flagz(const char *str, int *i);
 size_t	**ft_flaglock(void);
+size_t	ft_strllcpy(wchar_t *dest, wchar_t *src, size_t n);
 size_t	ft_nbrlen(size_t res_tmp);
 char	*ft_convert_base(size_t nbr);
 char	*ft_longitoa(long long int n);

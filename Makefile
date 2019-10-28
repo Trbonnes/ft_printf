@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ./ft_printf.c ./ft_printf_utils.c ./ft_indic.c ./ft_indic2.c  ./ft_indiclong.c ./ft_convertbase.c ./ft_longitoa.c ./ft_unsigned_itoa.c ./ft_flag.c
 OBJS = ${SRCS:.c=.o}

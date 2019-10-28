@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 13:59:19 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/25 17:05:38 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 11:36:53 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,43 @@ int	ft_printlc(va_list *ap, int r_value, size_t **flag)
 	return (r_value);
 }
 
-int	ft_printls(va_list *ap, int r_value, size_t **flag)
+void	ft_longputstr(wchar_t *str)
 {
-	wchar_t	*str;
 	char	c;
-	size_t	i;
 	size_t	k;
-	size_t	length;
 
 	k = 0;
-	i = 0;
-	str = va_arg(*ap, wchar_t *);
-	while (str[i])
-		i++;
-	ft_fielddisplay(flag, i, 0);
 	while (str[k])
 	{
 		c = str[k++];
 		write(1, &c, 1);
+	}
+}
+
+int	ft_printls(va_list *ap, int r_value, size_t **flag)
+{
+	wchar_t	*str;
+	wchar_t	*cpy;
+	size_t	i;
+	size_t	length;
+
+	i = 0;
+	str = va_arg(*ap, wchar_t *);
+	while (str[i])
+		i++;
+	if (!flag[2][0])
+	{
+		ft_fielddisplay(flag, i, 0);
+		ft_longputstr(str);
+	}
+	else
+	{
+		i = flag[2][1];
+		ft_fielddisplay(flag, i, 0);
+		if (!(cpy = malloc(sizeof(char) * i + 1)))
+			return (-1);
+		ft_strllcpy(cpy, str, i + 1);
+		ft_longputstr(cpy);
 	}
 	ft_fielddisplay(flag, i, 1);
 	length = ft_length(flag);

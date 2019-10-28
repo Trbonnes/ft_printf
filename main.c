@@ -3,7 +3,7 @@
 
 int	main(void)
 {
-	/*int ft;
+	int ft;
 	int true;
 	char *ptr;
 	int l;
@@ -12,8 +12,8 @@ int	main(void)
 	long long int f;
 	long int a;
 	long int b;
-	short int c;
-	short int d;
+	//short int c;
+	//short int d;
 
 	ptr = malloc(1);
 	printf("\n///c///\n");
@@ -85,8 +85,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///ls///\n");
-	ft = ft_printf("ft: %ls %10ls %-8ls\n", L"Bonjour", L"Tristan", L"42");
-	true = printf("pf: %ls %10ls %-8ls\n", L"Bonjour", L"Tristan", L"42");
+	ft = ft_printf("ft: %.3ls %10ls %-8ls\n", L"Bonjour", L"Tristan", L"42");
+	true = printf("pf: %.3ls %10ls %-8ls\n", L"Bonjour", L"Tristan", L"42");
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -141,7 +141,7 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 
-	printf("///hd///\n");
+	/*printf("///hd///\n");
 	ft = ft_printf("ft: %.*hd %7hd %-9hd %05hd\n", 8, (short)-18, (short)18, (short)18, (short)18);
 	true = printf("pf: %.*hd %7hd %-9hd %05hd\n", 8, (short)-18, (short)18, (short)18, (short)18);
 	printf("ft: %d\n", ft);
