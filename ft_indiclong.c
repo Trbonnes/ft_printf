@@ -6,14 +6,14 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 13:59:19 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 11:59:19 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 12:13:59 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "ft_printf.h"
 
-int	ft_printlc(va_list *ap, int r_value, size_t **flag)
+int		ft_printlc(va_list *ap, int r_value, size_t **flag)
 {
 	char	c;
 	size_t	length;
@@ -42,7 +42,7 @@ void	ft_longputstr(wchar_t *str)
 	}
 }
 
-int	ft_printls(va_list *ap, int r_value, size_t **flag)
+int		ft_printls(va_list *ap, int r_value, size_t **flag)
 {
 	wchar_t	*str;
 	wchar_t	*cpy;
@@ -74,7 +74,7 @@ int	ft_printls(va_list *ap, int r_value, size_t **flag)
 	return (r_value + (int)i);
 }
 
-int	ft_printldli(va_list *ap, int r_value, size_t **flag)
+int		ft_printldli(va_list *ap, int r_value, size_t **flag)
 {
 	char	*n;
 	size_t	i;
@@ -109,7 +109,7 @@ int	ft_printldli(va_list *ap, int r_value, size_t **flag)
 	return (r_value + (int)i);
 }
 
-int	ft_printlu(va_list *ap, int r_value, size_t **flag)
+int		ft_printlu(va_list *ap, int r_value, size_t **flag)
 {
 	char	*n;
 	size_t	i;

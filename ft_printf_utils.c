@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:51:27 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 12:01:42 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/28 12:14:14 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ size_t	ft_length(size_t **flag)
 	return (length);
 }
 
-size_t		ft_strllcpy(wchar_t *dest, wchar_t *src, size_t n)
+size_t	ft_strllcpy(wchar_t *dest, wchar_t *src, size_t n)
 {
 	unsigned int i;
 	unsigned int count;
