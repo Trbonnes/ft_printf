@@ -91,8 +91,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///ld///\n");
-	ft = ft_printf("ft: %.*ld %7ld %-9ld %05ld\n", 8, -18l, 18l, 18l, 18l);
-	true = printf("pf: %.*ld %7ld %-9ld %05ld\n", 8, -18l, 18l, 18l, 18l);
+	ft = ft_printf("ft: %10.*ld %7ld %-9ld %05ld\n", 8, -18l, 18l, 18l, 18l);
+	true = printf("pf: %10.*ld %7ld %-9ld %05ld\n", 8, -18l, 18l, 18l, 18l);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -214,7 +214,7 @@ int	main(void)
 	ft_printf("ft Int pad width with *: %*d.\n", 5, 18);
 	printf("PF Int pad width with *: %*d.\n\n", 5, 18);
 
-	ft_printf("FT Int pad and precision with *: %*.*d.\n", 10, 5, 18);
-	printf("PF Int pad and precision with *: %*.*d.\n\n", 10, 5, 18);
+	ft_printf("FT Int pad and precision with *: %*.*d.\n", 10, 5, -18);
+	printf("PF Int pad and precision with *: %*.*d.\n\n", 10, 5, -18);
 	return (0);
 }
