@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/29 12:09:39 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/29 17:09:51 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int		ft_printhx(va_list *ap, int r_value, int maj, size_t **flag);
 int		ft_printhhx(va_list *ap, int r_value, int maj, size_t **flag);
 int		ft_printhn(va_list *ap, int r_value);
 int		ft_printhhn(va_list *ap, int r_value);
+int		ft_doublef(va_list *ap, int r_value, size_t **flag);
 int		ft_standisplay(const char *str, int *i, int r_value);
 void	ft_fielddisplay(size_t **flag, size_t i, int bool, int neg);
 void	ft_displaypres(size_t **flag, size_t i, int bool, int neg);
@@ -58,10 +59,11 @@ void	ft_longputstr(wchar_t *str);
 int		ft_flagz(const char *str, int *i);
 size_t	**ft_flaglock(void);
 size_t	ft_strllcpy(wchar_t *dest, wchar_t *src, size_t n);
-size_t	ft_nbrlen(size_t res_tmp);
+size_t	ft_nbrlen(size_t res_tmp, size_t base_len);
 char	*ft_convert_base(size_t nbr);
 char	*ft_longitoa(long long int n);
 char	*ft_unsigneditoa(unsigned long long int n);
+char	*ft_dtos(long long int n, int point);
 size_t	ft_length(size_t **flag, int neg);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/29 12:13:17 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/29 17:23:59 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 
 int	main(void)
 {
-//	int ft;
-//	int true;
-//	char *ptr;
-//	int l;
-//	int k;
-//	long long int n;
-//	long long int f;
-//	long int a;
-//	long int b;
-//	short int c;
-//	short int d;
-//	signed char w;
-//	signed char q;
+	int ft;
+	int true;
+	/*char *ptr;
+	int l;
+	int k;
+	long long int n;
+	long long int f;
+	long int a;
+	long int b;
+	short int c;
+	short int d;
+	signed char w;
+	signed char q;*/
 
 	/*ptr = malloc(1);
 	printf("\n///c///\n");
@@ -90,9 +90,9 @@ int	main(void)
 	printf("value ft: %d value pf: %d\n", l, k);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 
-	/*printf("\n///lc///\n");
+	printf("\n///lc///\n");
 	ft = ft_printf("ft: %lc %5lc %-4lc\n", L'a', L'	', L'7');
 	true = printf("pf: %lc %5lc %-4lc\n", L'a', L'	', L'7');
 	printf("ft: %d\n", ft);
@@ -177,9 +177,9 @@ int	main(void)
 	printf("value ft: %lld value pf: %lld\n", n, f);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 
-	/*printf("///hd///\n");
+	printf("///hd///\n");
 	ft = ft_printf("ft: %.*hd %7hd %-9hd %05hd\n", 8, (short)-18, (short)18, (short)18, (short)18);
 	true = printf("pf: %.*hd %7hd %-9hd %05hd\n", 8, (short)-18, (short)18, (short)18, (short)18);
 	printf("ft: %d\n", ft);
@@ -254,16 +254,23 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");*/
 
+	printf("\n///f///\n");
+	ft = ft_printf("ft: %f\n", 1234.56777);
+	true = printf("pf: %f\n", 1234.56777);
+	printf("ft: %d\n", ft);
+	printf("pf: %d\n", true);
+	printf("\n");
+
 	/*printf("///'///\n");
 	ft = ft_printf("ft: \n");
 	true = printf("pf: %'d\n", 10000);
 	printf("ft: %d\n", ft);
-	printf("pf: %d\n", true);*/
+	printf("pf: %d\n", true);
 
 	//printf("%ls\n", L"licorne salee");
 	//write(1, L"licorne", sizeof(wchar_t) * 7)
 
-	/*printf("\n///TEST///\n");
+	printf("\n///TEST///\n");
 	printf("\n");
 	ft_printf("FT String precision (1.9): %1.9s.\n", "Hello");
 	printf("PF String precision (1.9): %1.9s.\n\n", "Hello");
@@ -309,7 +316,7 @@ int	main(void)
 	printf("PF Int pad width with *: %*d.\n\n", 5, 18);
 
 	ft_printf("FT Int pad and precision with *: %*.*d.\n", 10, 5, -18);
-	printf("PF Int pad and precision with *: %*.*d.\n\n", 10, 5, -18);*/
+	printf("PF Int pad and precision with *: %*.*d.\n\n", 10, 5, -18);
 
 
 	printf("\n///BONUS///\n");
@@ -373,6 +380,12 @@ int	main(void)
 	printf("PF Upper Hex Long: %lX.\n\n", (long) -5);
 
 	ft_printf("FT Upper Hex Long long: %llX.\n", (long long) -5);
-	printf("PF Upper Hex Long long: %llX.\n\n", (long long) -5);
+	printf("PF Upper Hex Long long: %llX.\n\n", (long long) -5);*/
+
+//	double	fl = 0.0/0.0;
+//	double	dl = 0.7777;
+//
+//	printf("%f, %.2f, %e, %.3e\n", fl, fl, fl, fl);
+//	printf("%f, %.2f, %e, %.9e\n", dl, dl, dl, dl);
 	return (0);
 }

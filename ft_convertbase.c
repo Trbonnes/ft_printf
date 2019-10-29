@@ -6,19 +6,17 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:38:16 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/29 11:44:40 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/29 16:25:44 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_nbrlen(size_t res_tmp)
+size_t	ft_nbrlen(size_t res_tmp, size_t base_len)
 {
 	size_t len;
-	size_t base_len;
 
 	len = 0;
-	base_len = 16;
 	while (res_tmp >= base_len)
 	{
 		len++;
@@ -44,9 +42,9 @@ char	*ft_convert_base(size_t nbr)
 		result[1] = '\0';
 		return (result);
 	}
-	if (!(result = malloc(sizeof(char) * (ft_nbrlen(nbr) + 1))))
+	if (!(result = malloc(sizeof(char) * (ft_nbrlen(nbr, 16) + 1))))
 		return (NULL);
-	rev = (ft_nbrlen(nbr));
+	rev = (ft_nbrlen(nbr, 16));
 	while (nbr > 0)
 	{
 		result[rev--] = base_to[nbr % to_len];
