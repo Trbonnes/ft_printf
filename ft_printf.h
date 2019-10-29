@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 15:00:29 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/29 10:04:05 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@
 int		ft_printf(const char *str, ...);
 int		ft_indicconvert(va_list *ap, int r_value, char c, size_t **flag);
 int		ft_indiclong(va_list *ap, int r_value, char c, size_t **flag);
+int		ft_indichh(va_list *ap, int r_value, char c, size_t **flag);
+int		ft_indich(va_list *ap, int r_value, char c, size_t **flag);
 int		ft_flag(va_list *ap, int r_value, const char *str, int *i);
+size_t	**ft_checkflag(va_list *ap, const char *str, int *i);
 int		ft_flagspace(const char *str, int *i);
 int		ft_flagz(const char *str, int *i);
 int		ft_flagpre(const char *str, int *i);
@@ -41,7 +44,10 @@ int		ft_printlc(va_list *ap, int r_value, size_t **flag);
 int		ft_printls(va_list *ap, int r_value, size_t **flag);
 int		ft_printldli(va_list *ap, int r_value, size_t **flag);
 int		ft_printlu(va_list *ap, int r_value, size_t **flag);
+int		ft_printlx(va_list *ap, int r_value, int maj, size_t **flag);
 int		ft_println(va_list *ap, int r_value);
+int		ft_printhn(va_list *ap, int r_value);
+int		ft_printhhn(va_list *ap, int r_value);
 int		ft_standisplay(const char *str, int *i, int r_value);
 void	ft_fielddisplay(size_t **flag, size_t i, int bool, int neg);
 void	ft_displaypres(size_t **flag, size_t i, int bool, int neg);

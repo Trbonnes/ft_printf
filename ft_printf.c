@@ -6,19 +6,19 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 13:38:30 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/29 10:08:13 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "ft_printf.h"
 
-int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
+size_t		**ft_checkflag(va_list *ap, const char *str, int *i)
 {
 	size_t	**flag;
 
 	if (!(flag = ft_flaglock()))
-		return (-1);
+		return (0);
 	(*i)++;
 	flag[0][0] = ft_flagspace(str, i);
 	flag[1][0] = ft_flagz(str, i);
@@ -32,57 +32,32 @@ int	ft_flag(va_list *ap, int r_value, const char *str, int *i)
 	flag[3][1] = 0;
 	flag[4][1] = 0;
 	flag[5][1] = 0;
+	return (flag);
+}
+
+int			ft_flag(va_list *ap, int r_value, const char *str, int *i)
+{
+	size_t	**flag;
+
+	if (!(flag = ft_checkflag(ap, str, i)))
+		return (0);
 	while (!ft_isalpha(str[*i]) || ft_isdigit(str[*i]) || str[*i] == '*')
 		(*i)++;
-	if ((str[*i] == 'l' && str[(*i) + 1] == 'l') ||
-	(str[*i] == 'h' && str[(*i) + 1] == 'h'))
+	if (str[*i] == 'h' && str[(*i) + 1] == 'h')
+	{
 		(*i)++;
-	if (str[*i] == 'l' || str[*i] == 'h')
+		return (r_value = ft_indichh(ap, r_value, str[++(*i)], flag));
+	}
+	else if (str[*i] == 'h')
+		return (r_value = ft_indich(ap, r_value, str[++(*i)], flag));
+	else if (str[*i] == 'l' && str[(*i) + 1] == 'l')
+		(*i)++;
+	if (str[*i] == 'l')
 		return (r_value = ft_indiclong(ap, r_value, str[++(*i)], flag));
 	return (r_value = ft_indicconvert(ap, r_value, str[*i], flag));
 }
 
-int	ft_indiclong(va_list *ap, int r_value, char c, size_t **flag)
-{
-	if (c == 'c')
-		r_value = ft_printlc(ap, r_value, flag);
-	else if (c == 's')
-		r_value = ft_printls(ap, r_value, flag);
-	else if (c == 'd')
-		r_value = ft_printldli(ap, r_value, flag);
-	else if (c == 'i')
-		r_value = ft_printldli(ap, r_value, flag);
-	else if (c == 'u')
-		r_value = ft_printlu(ap, r_value, flag);
-	else if (c == 'n')
-		r_value = ft_println(ap, r_value);
-	return (r_value);
-}
-
-int	ft_indicconvert(va_list *ap, int r_value, char c, size_t **flag)
-{
-	if (c == 'c')
-		r_value = ft_printc(ap, r_value, flag);
-	else if (c == 's')
-		r_value = ft_prints(ap, r_value, flag);
-	else if (c == 'p')
-		r_value = ft_printp(ap, r_value, flag);
-	else if (c == 'd')
-		r_value = ft_printdi(ap, r_value, flag);
-	else if (c == 'i')
-		r_value = ft_printdi(ap, r_value, flag);
-	else if (c == 'u')
-		r_value = ft_printu(ap, r_value, flag);
-	else if (c == 'x')
-		r_value = ft_printx(ap, r_value, 0, flag);
-	else if (c == 'X')
-		r_value = ft_printx(ap, r_value, 1, flag);
-	else if (c == 'n')
-		r_value = ft_printn(ap, r_value);
-	return (r_value);
-}
-
-int	ft_printf(const char *str, ...)
+int			ft_printf(const char *str, ...)
 {
 	int		i;
 	int		r_value;
