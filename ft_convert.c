@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 10:07:02 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/29 10:07:51 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/29 12:07:34 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int	ft_indichh(va_list *ap, int r_value, char c, size_t **flag)
 	else if (c == 'u')
 		r_value = ft_printu(ap, r_value, flag);
 	else if (c == 'x')
-		r_value = ft_printx(ap, r_value, 0, flag);
+		r_value = ft_printhhx(ap, r_value, 0, flag);
 	else if (c == 'X')
-		r_value = ft_printx(ap, r_value, 1, flag);
+		r_value = ft_printhhx(ap, r_value, 1, flag);
 	else if (c == 'n')
 		r_value = ft_printhhn(ap, r_value);
 	return (r_value);
@@ -61,9 +61,9 @@ int	ft_indich(va_list *ap, int r_value, char c, size_t **flag)
 	else if (c == 'u')
 		r_value = ft_printu(ap, r_value, flag);
 	else if (c == 'x')
-		r_value = ft_printx(ap, r_value, 0, flag);
+		r_value = ft_printhx(ap, r_value, 0, flag);
 	else if (c == 'X')
-		r_value = ft_printx(ap, r_value, 1, flag);
+		r_value = ft_printhx(ap, r_value, 1, flag);
 	else if (c == 'n')
 		r_value = ft_printhn(ap, r_value);
 	return (r_value);

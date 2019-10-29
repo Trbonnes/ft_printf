@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/10/29 12:13:17 by trbonnes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <stdio.h>
 
 int	main(void)
 {
-	int ft;
-	int true;
+//	int ft;
+//	int true;
 //	char *ptr;
 //	int l;
 //	int k;
@@ -12,10 +24,10 @@ int	main(void)
 //	long long int f;
 //	long int a;
 //	long int b;
-	short int c;
-	short int d;
-	signed char w;
-	signed char q;
+//	short int c;
+//	short int d;
+//	signed char w;
+//	signed char q;
 
 	/*ptr = malloc(1);
 	printf("\n///c///\n");
@@ -167,7 +179,7 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");*/
 
-	printf("///hd///\n");
+	/*printf("///hd///\n");
 	ft = ft_printf("ft: %.*hd %7hd %-9hd %05hd\n", 8, (short)-18, (short)18, (short)18, (short)18);
 	true = printf("pf: %.*hd %7hd %-9hd %05hd\n", 8, (short)-18, (short)18, (short)18, (short)18);
 	printf("ft: %d\n", ft);
@@ -240,7 +252,13 @@ int	main(void)
 	printf("value ft: %hhd value pf: %hhd\n", w, q);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");
+	printf("\n");*/
+
+	/*printf("///'///\n");
+	ft = ft_printf("ft: \n");
+	true = printf("pf: %'d\n", 10000);
+	printf("ft: %d\n", ft);
+	printf("pf: %d\n", true);*/
 
 	//printf("%ls\n", L"licorne salee");
 	//write(1, L"licorne", sizeof(wchar_t) * 7)
@@ -292,5 +310,69 @@ int	main(void)
 
 	ft_printf("FT Int pad and precision with *: %*.*d.\n", 10, 5, -18);
 	printf("PF Int pad and precision with *: %*.*d.\n\n", 10, 5, -18);*/
+
+
+	printf("\n///BONUS///\n");
+	printf("\n");
+
+	ft_printf("FT Char: %hhd.\n", (char) -5);
+	printf("PF Char: %hhd.\n\n", (char) -5);
+
+	ft_printf("FT Short: %hd.\n", (short) -5);
+	printf("PF Short: %hd.\n\n", (short) -5);
+
+	ft_printf("FT Int: %d.\n", (int) -5);
+	printf("PF Int: %d.\n\n", (int) -5);
+
+	ft_printf("FT Long: %ld.\n", (long) -5);
+	printf("PF Long: %ld.\n\n", (long) -5);
+
+	ft_printf("FT Long long: %lld.\n", (long long) -5);
+	printf("PF Long long: %lld.\n\n", (long long) -5);
+
+	ft_printf("FT Unsigned Char: %hhu.\n", (unsigned char) -5);
+	printf("PF Unsigned Char: %hhu.\n\n", (unsigned char) -5);
+
+	ft_printf("FT Unsigned Short: %hu.\n", (unsigned short) -5);
+	printf("PF Unsigned Short: %hu.\n\n", (unsigned short) -5);
+
+	ft_printf("FT Unsigned Int: %u.\n", (unsigned int) -5);
+	printf("PF Unsigned Int: %u.\n\n", (unsigned int) -5);
+
+	ft_printf("FT Unsigned Long: %lu.\n", (unsigned long) -5);
+	printf("PF Unsigned Long: %lu.\n\n", (unsigned long) -5);
+
+	ft_printf("FT Unsigned Long long: %llu.\n", (unsigned long long) -5);
+	printf("PF Unsigned Long long: %llu.\n\n", (unsigned long long) -5);
+
+	ft_printf("FT Hex Char: %hhx.\n", (char) -56);
+	printf("PF Hex Char: %hhx.\n\n", (char) -56);
+
+	ft_printf("FT Hex Short: %hx.\n", (short) -5);
+	printf("PF Hex Short: %hx.\n\n", (short) -5);
+
+	ft_printf("FT Hex Int: %x.\n", (int) -5);
+	printf("PF Hex Int: %x.\n\n", (int) -5);
+
+	ft_printf("FT Hex Long: %lx.\n", (long) -5);
+	printf("PF Hex Long: %lx.\n\n", (long) -5);
+
+	ft_printf("FT Hex Long long: %llx.\n", (long long) -5);
+	printf("PF Hex Long long: %llx.\n\n", (long long) -5);
+
+	ft_printf("FT Upper Hex Char: %hhX.\n", (char) -11);
+	printf("PF Upper Hex Char: %hhX.\n\n", (char) -11);
+
+	ft_printf("FT Upper Hex Short: %hX.\n", (short) -5);
+	printf("PF Upper Hex Short: %hX.\n\n", (short) -5);
+
+	ft_printf("FT Upper Hex Int: %X.\n", (int) -5);
+	printf("PF Upper Hex Int: %X.\n\n", (int) -5);
+
+	ft_printf("FT Upper Hex Long: %lX.\n", (long) -5);
+	printf("PF Upper Hex Long: %lX.\n\n", (long) -5);
+
+	ft_printf("FT Upper Hex Long long: %llX.\n", (long long) -5);
+	printf("PF Upper Hex Long long: %llX.\n\n", (long long) -5);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/29 10:04:05 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/29 12:09:39 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int		ft_printldli(va_list *ap, int r_value, size_t **flag);
 int		ft_printlu(va_list *ap, int r_value, size_t **flag);
 int		ft_printlx(va_list *ap, int r_value, int maj, size_t **flag);
 int		ft_println(va_list *ap, int r_value);
+int		ft_printhx(va_list *ap, int r_value, int maj, size_t **flag);
+int		ft_printhhx(va_list *ap, int r_value, int maj, size_t **flag);
 int		ft_printhn(va_list *ap, int r_value);
 int		ft_printhhn(va_list *ap, int r_value);
 int		ft_standisplay(const char *str, int *i, int r_value);
