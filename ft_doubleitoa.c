@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 14:22:28 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 10:23:46 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/30 13:18:34 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,34 +46,34 @@ static char	*ft_fullup(int size, int neg, long long int n, int point)
 
 	tmp = n;
 	if (n == 0)
-		str = ft_zero();
-	else
+		return (str = ft_zero());
+	if (!(str = malloc(sizeof(char) * size + 2)))
+		return (NULL);
+	i = size;
+	if (neg == -2)
+		str[i--] = '8';
+	while (tmp > 0)
 	{
-		if (!(str = malloc(sizeof(char) * size + 2)))
-			return (NULL);
-		i = size;
-		if (neg == -2)
-			str[i--] = '8';
-		while (tmp > 0)
-		{
-			if (i == point)
-				str[i--] = '.';
-			str[i--] = ((tmp % 10) + '0');
-			tmp = tmp / 10;
-		}
-		if (neg < 0)
-			str[0] = '-';
-		str[size + 1] = '\0';
+		if (i == point)
+			str[i--] = '.';
+		str[i--] = ((tmp % 10) + '0');
+		tmp = tmp / 10;
 	}
+	if (neg < 0)
+		str[0] = '-';
+	str[size + 1] = '\0';
 	return (str);
 }
 
-char		*ft_dtos(long long int n, int point)
+char		*ft_dtos(double f)
 {
 	char				*str;
+	long long			n;
 	int					neg;
 	int					size;
+	size_t				point;
 
+	n = ft_dtol(f, &point);
 	neg = 1;
 	size = 0;
 	if (n < 0)

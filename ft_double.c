@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 13:35:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 11:17:06 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/30 13:48:43 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ long long	ft_dtol(double f, size_t *i)
 
 void		ft_doublepres(char *str, size_t **flag, size_t *i, size_t *j)
 {
-	if ((*j) < flag[2][1] && --(*i))
+	if ((*j) < flag[2][1] && (*i)--)
 	{
-
 		ft_fielddisplay(flag, (*i) + flag[2][1] + 2, 0, 0);
 		ft_putstr_fd(str, 1);
 		while ((*j)++ < flag[2][1])
@@ -86,15 +85,16 @@ void		ft_doublestd(char *str, size_t **flag, size_t *i, size_t *j)
 
 int			ft_doublef(va_list *ap, int r_value, size_t **flag)
 {
+	double		f;
 	char		*str;
-	long long	conv;
 	size_t		i;
 	size_t		j;
 	size_t		length;
 
-	i = 0;
-	conv = ft_dtol(va_arg(*ap, double), &i);
-	str = ft_dtos(conv, i);
+	f = va_arg(*ap, double);
+	if ((i = ft_isdouble(f, flag)))
+		return (r_value + i);
+	str = ft_dtos(f);
 	i = 0;
 	j = 0;
 	while (str[i] != '.')
