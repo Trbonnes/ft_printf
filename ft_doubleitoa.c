@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 14:22:28 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 13:18:34 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/30 15:24:29 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_size(long long int n, int size)
 	return (size);
 }
 
-static char				*ft_zero(void)
+static char	*ft_zero(void)
 {
 	char	*str;
 
