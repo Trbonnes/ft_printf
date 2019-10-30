@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 14:22:28 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/29 17:04:02 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/30 10:23:46 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ static char				*ft_zero(void)
 {
 	char	*str;
 
-	if (!(str = malloc(sizeof(char) * 2)))
+	if (!(str = malloc(sizeof(char) * 4)))
 		return (NULL);
 	str[0] = '0';
-	str[1] = '\0';
+	str[1] = '.';
+	str[2] = '0';
+	str[3] = '\0';
 	return (str);
 }
 
@@ -79,6 +81,7 @@ char		*ft_dtos(long long int n, int point)
 		neg = -1;
 		n = -n;
 		size++;
+		point++;
 	}
 	size = ft_size(n, size);
 	str = ft_fullup(size, neg, n, point);

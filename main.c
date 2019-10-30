@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 09:29:41 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/30 11:32:17 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,8 +255,8 @@ int	main(void)
 	printf("\n");*/
 
 	printf("\n///f///\n");
-	ft = ft_printf("ft: %f\n", 1234.56777);
-	true = printf("pf: %f\n", 1234.56777);
+	ft = ft_printf("ft: \"%020.10f\"\n", 123.456);
+	true = printf("pf: \"%020.10f\"\n", 123.456);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
