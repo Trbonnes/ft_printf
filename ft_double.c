@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 13:35:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/29 17:55:13 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/30 09:03:39 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,33 +52,41 @@ int		ft_doublef(va_list *ap, int r_value, size_t **flag)
 	j = 0;
 	while (str[i] != '.')
 		i++;
-	while (str[i + j])
+	while (str[i + j + 1])
 		j++;
 	if (flag[2][0])
 	{
-		if (j <= flag[2][1])
+		if (j < flag[2][1] && i--)
 		{
-			i = ft_strlen(str);
 			ft_putstr_fd(str, 1);
-			while (j++ <= flag[2][1] && i++)
+			while (j++ < flag[2][1])
 				ft_putchar_fd('0', 1);
 		}
 		else
 		{
 			j = flag[2][1];
-			if (str[i + j + 1] >= 5)
+			if (str[i + j] == '.' && i--)
+				str[i + j + 1] = str[i + j + 2];
+			if (str[i + j + 1] >= '5')
 				str[i + j]++;
 			str[i + j + 1] = '\0';
 			ft_putstr_fd(str, 1);
 		}
 	}
+	else if (j > 6)
+	{
+		j = 6;
+		if (str[i + j + 1] >= '5')
+			str[i + j]++;
+		str[i + j + 1] = '\0';
+		ft_putstr_fd(str, 1);
+	}
 	else
 	{
-		i = ft_strlen(str);
 		ft_putstr_fd(str, 1);
-		if (j <= 6)
-			while (j++ <= 6 && i++)
+		if (j < 6 && i--)
+			while (j++ < 6)
 				ft_putchar_fd('0', 1);
 	}
-	return (r_value + i);
+	return (r_value + i + j + 1);
 }
