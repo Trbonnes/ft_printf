@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 15:02:09 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/30 15:12:04 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 	signed char w;
 	signed char q;*/
 
-	ft_printf("%d\n", ft_printf("%f\n", 123.456));
+//	ft_printf("%d\n", ft_printf("%f\n", 123.456));
 
 	/*ptr = malloc(1);
 	printf("\n///c///\n");
@@ -259,6 +259,12 @@ int	main(void)
 	printf("\n///f///\n");
 	ft = ft_printf("ft: \"%40.99f\"\n", 0.0/0.0);
 	true = printf("pf: \"%40.99f\"\n", 0.0/0.0);
+	printf("ft: %d\n", ft);
+	printf("pf: %d\n", true);
+	printf("\n");
+	printf("\n///e///\n");
+	ft = ft_printf("ft: \"%e\"\n", 123.456456);
+	true = printf("pf: \"%e\"\n", 123.456456);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
