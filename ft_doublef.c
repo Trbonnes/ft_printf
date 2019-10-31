@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 13:35:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/31 11:57:10 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/31 12:30:02 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ double		ft_doublereduce(double tmp, size_t *i, int *bool)
 {
 	long long conv_tmp;
 
-	while (tmp > 1)
+	while (tmp >= 1)
 	{
 		conv_tmp = (long long)tmp;
 		if (conv_tmp % 10 == 0)
@@ -143,7 +143,7 @@ int			ft_doublef(va_list *ap, int r_value, size_t **flag)
 		ft_doublestd(str, flag, &i, &j);
 	ft_fielddisplay(flag, i + j + 1, 1, 0);
 	length = ft_length(flag, 0);
-	if (i + length + 1 > i + j + 1)
+	if (length > i + j + 1)
 		return (r_value + (int)length);
 	return (r_value + i + j + 1);
 }
