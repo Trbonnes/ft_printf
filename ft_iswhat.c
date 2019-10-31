@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 14:36:58 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 14:37:11 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/31 09:26:36 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ int		ft_isninf(double dbl)
 	n = *((long long *)&dbl);
 	return ((n >> 52 & 0xfff) == 0xfff &&
 			(n & 0xfffffffffffff) == 0);
+}
+
+int		ft_ismultiple(double dbl, long long mult)
+{
+	long long tmp;
+
+	tmp = dbl;
+	if (tmp % mult == 0)
+		return (1);
+	return (0);
 }

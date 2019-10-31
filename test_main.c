@@ -87,7 +87,7 @@ int		main(void)
 	TEST_N("Int Conv n: %n.\n", int);
 	TEST_N("Long Conv n: %ln.\n", long);
 	TEST_N("Long long Conv n: %lln.\n", long long);
-	/*TEST("Double Conv f 1.0: %f.\n", 1.0);
+	TEST("Double Conv f 1.0: %f.\n", 1.0);
 	TEST("Double Conv f 2.0: %f.\n", 3.0);
 	TEST("Double Conv f 3.0e2: %f.\n", 3.0e2);
 	TEST("Double Conv f -3.0e3: %f.\n", -3.0e3);
@@ -111,7 +111,7 @@ int		main(void)
 	TEST("Double Conv f with -Inf: %f.\n", -1.0/0.0);
 	TEST("Double Conv f with NaN and padding: %9f.\n", 0.0/0.0);
 	TEST("Double Conv f with NaN and negative padding: %-9f.\n", 0.0/0.0);
-	TEST("Double Conv e 1.0: %e.\n", 1.0);
+	/*TEST("Double Conv e 1.0: %e.\n", 1.0);
 	TEST("Double Conv e 2.0: %e.\n", 3.0);
 	TEST("Double Conv e 3.0e2: %e.\n", 3.0e2);
 	TEST("Double Conv e -3.0e3: %e.\n", -3.0e3);

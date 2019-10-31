@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 11:40:25 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 14:37:15 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/31 08:39:47 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ size_t	ft_isdouble(double f, size_t **flag)
 	size_t	r_value;
 
 	dbl = f;
-	r_value = ft_isnotdouble(flag, dbl);
+	if (!(r_value = ft_isnotdouble(flag, dbl)))
+		return (0);
 	ft_fielddisplay(flag, r_value, 1, 0);
 	length = ft_length(flag, 0);
 	if (length > r_value)

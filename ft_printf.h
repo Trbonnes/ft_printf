@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 13:52:18 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/10/31 09:27:01 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ size_t		ft_length(size_t **flag, int neg);
 int			ft_isnan(double dbl);
 int			ft_ispinf(double dbl);
 int			ft_isninf(double dbl);
+int			ft_ismultiple(double dbl, long long mult);
 
 #endif
