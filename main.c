@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/01 17:15:34 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/01 17:31:48 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,14 @@ int	main(void)
 	true = printf("pf: %X %7X %-9X %05X\n", 256, 1024, 0, 29);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 	printf("///%%///\n");
 	ft = ft_printf("ft: %% %5% %08% %-3% %.8%\n");
 	true = printf("pf: %% %5% %08% %-3% %.8%\n");
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
-	/*printf("///n///\n");
+	printf("///n///\n");
 	ft = ft_printf("ft: %s\n %n\n", "0123456789", &l);
 	true = printf("pf: %s\n %n\n", "0123456789", &k);
 	printf("value ft: %d value pf: %d\n", l, k);
@@ -258,7 +258,7 @@ int	main(void)
 
 	printf("\n///f///\n");
 	ft = ft_printf("ft: \"%15.9f\"\n", 123.456);
-	true = printf("pf: \"%15.9f\"\n", 123.456);
+	true = printf("pf: \"%15.9f %          f\"\n", 123.456, 123.456);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
