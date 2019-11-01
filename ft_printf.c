@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/31 09:04:21 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/01 17:12:40 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int			ft_flag(va_list *ap, int r_value, const char *str, int *i)
 
 	if (!(flag = ft_checkflag(ap, str, i)))
 		return (0);
-	while (!ft_isalpha(str[*i]) || ft_isdigit(str[*i]) || str[*i] == '*')
+	while ((!ft_isalpha(str[*i]) && str[*i] != '%') || ft_isdigit(str[*i]) || str[*i] == '*')
 		(*i)++;
 	if (str[*i] == 'h' && str[(*i) + 1] == 'h')
 	{
@@ -70,10 +70,7 @@ int			ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			if ((str[i + 1]) == '%')
-				r_value = ft_standisplay(str, &i, r_value);
-			else
-				r_value = ft_flag(&ap, r_value, str, &i);
+			r_value = ft_flag(&ap, r_value, str, &i);
 			i++;
 		}
 		else

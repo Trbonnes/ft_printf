@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 11:34:08 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/28 13:52:26 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/01 17:12:33 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_flagspace(const char *str, int *i)
 	int j;
 
 	j = 0;
-	while (!ft_isalpha(str[(*i) + j]))
+	while (!ft_isalpha(str[(*i) + j]) && str[(*i) + j] != '%')
 	{
-		if (((str[(*i) + j] > '0' && str[*i] <= '9') || str[(*i) + j] == '*') &&
+		if (((str[(*i) + j] > '0' && str[(*i) + j] <= '9') || str[(*i) + j] == '*') &&
 		str[(*i) + (j - 1)] != '.' && str[(*i) + (j - 1)] != '0')
 			return (1);
 		j++;
@@ -32,7 +32,7 @@ int	ft_flagz(const char *str, int *i)
 	int j;
 
 	j = 0;
-	while (!ft_isalpha(str[(*i) + j]))
+	while (!ft_isalpha(str[(*i) + j]) && str[(*i) + j] != '%')
 	{
 		if (str[(*i) + j] == '0' &&
 		!(str[(*i) + (j - 1)] > '0' && str[(*i) + (j - 1)] <= '9'))
@@ -47,7 +47,7 @@ int	ft_flagpre(const char *str, int *i)
 	int j;
 
 	j = 0;
-	while (!ft_isalpha(str[(*i) + j]))
+	while (!ft_isalpha(str[(*i) + j]) && str[(*i) + j] != '%')
 	{
 		if (str[(*i) + j] == '.')
 			return (1);
@@ -61,7 +61,7 @@ int	ft_flaghash(const char *str, int *i)
 	int j;
 
 	j = 0;
-	while (!ft_isalpha(str[(*i) + j]))
+	while (!ft_isalpha(str[(*i) + j]) && str[(*i) + j] != '%')
 	{
 		if (str[(*i) + j] == '#')
 			return (1);
@@ -75,7 +75,7 @@ int	ft_flagmoins(const char *str, int *i)
 	int j;
 
 	j = 0;
-	while (!ft_isalpha(str[(*i) + j]))
+	while (!ft_isalpha(str[(*i) + j]) && str[(*i) + j] != '%')
 	{
 		if (str[(*i) + j] == '-')
 			return (1);
