@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/01 17:31:48 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/01 18:26:59 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ int	main(void)
 	true = printf("pf: %p %15p %-15p\n", ptr, ptr, ptr);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");
+	printf("\n");*/
 	printf("///d///\n");
-	ft = ft_printf("ft: %012.*d %7d %-9d %05d\n", 8, -256, 1024, 0, 29);
-	true = printf("pf: %012.*d %7d %-9d %05d\n", 8, -256, 1024, 0, 29);
+	ft = ft_printf("ft: %012.*d %7d %-9d%       05d\n", 8, -256, 1024, 1, 29);
+	true = printf("pf: %012.*d %7d %-9d%        05d\n", 8, -256, 1024, 1, 29);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
-	printf("///i///\n");
+	/*printf("///i///\n");
 	ft = ft_printf("ft: %+i %+7i %-+9i %0+5i\n", 256, 18, -1024, 29);
 	true = printf("pf: %+i %+7i %-+9i %0+5i\n", 256, 18, -1024, 29);
 	printf("ft: %d\n", ft);
@@ -256,12 +256,12 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");*/
 
-	printf("\n///f///\n");
+	/*printf("\n///f///\n");
 	ft = ft_printf("ft: \"%15.9f\"\n", 123.456);
 	true = printf("pf: \"%15.9f %          f\"\n", 123.456, 123.456);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");
+	printf("\n");*/
 	/*printf("\n///e///\n");
 	ft = ft_printf("ft: \"%e\"\n", 123.456456);
 	true = printf("pf: \"%e\"\n", 123.456456);
