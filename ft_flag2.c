@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/01 17:10:32 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/04 08:28:15 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,20 @@ int	ft_flagplus(const char *str, int *i)
 	while (!ft_isalpha(str[(*i) + j]) && str[(*i) + j] != '%')
 	{
 		if (str[(*i) + j] == '+')
+			return (1);
+		j++;
+	}
+	return (0);
+}
+
+int	ft_flagcomma(const char *str, int *i)
+{
+	int j;
+
+	j = 0;
+	while (!ft_isalpha(str[(*i) + j]) && str[(*i) + j] != '%')
+	{
+		if (str[(*i) + j] == '\'')
 			return (1);
 		j++;
 	}
