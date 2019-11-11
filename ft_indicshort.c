@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 08:22:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/29 12:12:56 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 12:27:02 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int		ft_printhx(va_list *ap, int r_value, int maj, size_t **flag)
 	i = -1;
 	nb = va_arg(*ap, int);
 	str = ft_convert_base(nb);
+	if (flag[2][0] && flag[2][1] == 0 && str[0] == '0' && i--)
+		str[0] = '\0';
 	if (maj == 1)
 		while (str[++i])
 			str[i] = ft_toupper((int)str[i]);
@@ -52,6 +54,8 @@ int		ft_printhhx(va_list *ap, int r_value, int maj, size_t **flag)
 	else
 		nb = a;
 	str = ft_convert_base(nb);
+	if (flag[2][0] && flag[2][1] == 0 && str[0] == '0' && i--)
+		str[0] = '\0';
 	if (maj == 1)
 		while (str[++i])
 			str[i] = ft_toupper((int)str[i]);

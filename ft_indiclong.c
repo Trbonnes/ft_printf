@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 13:59:19 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/30 15:23:08 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 12:26:17 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int		ft_printldli(va_list *ap, int r_value, size_t **flag)
 
 	n = ft_longitoa(va_arg(*ap, long long int));
 	i = ft_strlen(n);
+	if (flag[2][0] && flag[2][1] == 0 && n[0] == '0' && i--)
+		n[0] = '\0';
 	neg = 0;
 	if (n[0] == '-' && (flag[1][0] || flag[2][0]))
 	{
@@ -81,6 +83,8 @@ int		ft_printldli(va_list *ap, int r_value, size_t **flag)
 	length = ft_length(flag, neg);
 	if (length > i)
 		return (r_value + (int)length);
+	else if (flag[7][0])
+		return (r_value + (int)i + 1);
 	return (r_value + (int)i);
 }
 
@@ -92,6 +96,8 @@ int		ft_printlu(va_list *ap, int r_value, size_t **flag)
 
 	n = ft_unsigneditoa(va_arg(*ap, unsigned long long int));
 	i = ft_strlen(n);
+	if (flag[2][0] && flag[2][1] == 0 && n[0] == '0' && i--)
+		n[0] = '\0';
 	ft_fielddisplay(flag, i, 0, 0);
 	ft_putstr_fd(n, 1);
 	ft_fielddisplay(flag, i, 1, 0);

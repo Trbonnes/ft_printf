@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 11:55:18 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 13:40:35 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	ft_printdi(va_list *ap, int r_value, size_t **flag)
 
 	n = ft_itoa(va_arg(*ap, int));
 	i = ft_strlen(n);
-	if (n[0] == '0' && i--)
+	if (flag[2][0] && flag[2][1] == 0 && n[0] == '0' && i--)
 		n[0] = '\0';
 	neg = 0;
 	if (n[0] == '-' && (flag[1][0] || flag[2][0]))
@@ -114,7 +114,7 @@ int	ft_printu(va_list *ap, int r_value, size_t **flag)
 
 	n = ft_unsigneditoa(va_arg(*ap, unsigned int));
 	i = ft_strlen(n);
-	if (n[0] == '0' && i--)
+	if (flag[2][0] && flag[2][1] == 0 && n[0] == '0' && i--)
 		n[0] = '\0';
 	ft_fielddisplay(flag, i, 0, 0);
 	ft_putstr_fd(n, 1);
