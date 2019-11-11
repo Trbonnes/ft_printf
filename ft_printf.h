@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/04 08:32:28 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 09:04:57 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int			ft_indichh(va_list *ap, int r_value, char c, size_t **flag);
 int			ft_indich(va_list *ap, int r_value, char c, size_t **flag);
 int			ft_flag(va_list *ap, int r_value, const char *str, int *i);
 size_t		**ft_checkflag(va_list *ap, const char *str, int *i);
+int			ft_flagvoid(const char *str, int *i);
 int			ft_flagspace(const char *str, int *i);
 int			ft_flagz(const char *str, int *i);
 int			ft_flagpre(const char *str, int *i);

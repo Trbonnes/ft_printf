@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 13:35:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/10/31 12:30:02 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 09:32:48 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,5 +145,7 @@ int			ft_doublef(va_list *ap, int r_value, size_t **flag)
 	length = ft_length(flag, 0);
 	if (length > i + j + 1)
 		return (r_value + (int)length);
+	else if (flag[7][0])
+		return (r_value + i + j + 2);
 	return (r_value + i + j + 1);
 }
