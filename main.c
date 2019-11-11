@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 16:22:41 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 16:54:29 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");*/
 	printf("///d///\n");
-	ft = ft_printf("ft: %0d %7d %-9d%d %5.0d\n", -256, 1024, 1, 29, -0);
-	true = printf("pf: %0d %7d %-9d%d %5.0d\n", -256, 1024, 1, 29, -0);
+	ft = ft_printf("ft: % 20.12d\n", 147);
+	true = printf("pf: % 20.12d\n", 147);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
