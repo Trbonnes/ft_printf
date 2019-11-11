@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:26:47 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/01 17:16:19 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 11:56:26 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_printx(va_list *ap, int r_value, int maj, size_t **flag)
 	i = -1;
 	nb = (size_t)va_arg(*ap, unsigned int);
 	str = ft_convert_base(nb);
+	if (str[0] == '0')
+		str[0] = '\0';
 	if (maj == 1)
 		while (str[++i])
 			str[i] = ft_toupper((int)str[i]);

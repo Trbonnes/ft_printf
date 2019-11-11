@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 08:24:38 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 11:40:43 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int	ft_flagzsize(va_list *ap, const char *str, int *i, int check)
 int	ft_flagpresize(va_list *ap, const char *str, int *i, int check)
 {
 	int j;
+	int r_value;
 
 	j = 0;
 	if (!check)
@@ -85,6 +86,10 @@ int	ft_flagpresize(va_list *ap, const char *str, int *i, int check)
 		j++;
 	j++;
 	if (str[(*i) + j] == '*')
-		return (va_arg(*ap, int));
-	return (ft_atoi(str + *i + j));
+		r_value = va_arg(*ap, int);
+	else
+		r_value = ft_atoi(str + *i + j);
+	if (r_value < 0)
+		return (0);
+	return (r_value);
 }

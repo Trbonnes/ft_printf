@@ -17,7 +17,8 @@ LINK = ar rcs
 
 ${NAME}:	${SRCS} libft.h
 			${CC} ${CFLAGS} -I${INCLUDES} -c ${SRCS}
-			${LINK} ${NAME} ${OBJS}		
+			${LINK} ${NAME} ${OBJS}
+			ranlib libft.a	
 
 all:	${NAME}
 

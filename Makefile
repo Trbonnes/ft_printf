@@ -19,10 +19,10 @@ ${NAME}:	${SRCS} ft_printf.h
 all:		${NAME}
 
 test:		${NAME}
-			${CC} ${CFLAGS} libft/libft.a ./libftprintf.a ./main.c 
+			${CC} ${CFLAGS} ./libftprintf.a libft/libft.a ./main.c 
 
 test2:		${NAME}
-			${CC} ${CFLAGS} libft/libft.a ./libftprintf.a ./test_main.c -D MINE -D BONUS
+			${CC} ${CFLAGS} ./libftprintf.a libft/libft.a ./test_main.c -D MINE -D BONUS
 
 clean:
 			rm -f ${OBJS}
