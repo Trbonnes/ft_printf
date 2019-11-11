@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 13:40:35 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/11 16:13:38 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ int	ft_printdi(va_list *ap, int r_value, size_t **flag)
 		i--;
 		neg = 1;
 		n++;
-		r_value++;
+		if (!flag[7][0])
+			r_value++;
 	}
 	else if (n[0] != '-' && flag[5][0])
 		ft_plusdisplay(&i, flag, neg);

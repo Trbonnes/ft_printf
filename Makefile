@@ -26,6 +26,7 @@ test2:		${NAME}
 
 clean:
 			rm -f ${OBJS}
+			rm -f *.o
 			cd libft && make clean
 
 fclean:		clean
