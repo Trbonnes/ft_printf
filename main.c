@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 13:42:18 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/11/12 14:25:04 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/11/12 15:40:14 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(void)
 {
 	int ft;
 	int true;
-	//char *ptr;
-	/*int l;
+	/*char *ptr;
+	int l;
 	int k;
 	long long int n;
 	long long int f;
@@ -29,36 +29,34 @@ int	main(void)
 	signed char w;
 	signed char q;*/
 
-//	ft_printf("%d\n", ft_printf("%f\n", 123.456));
-
 	//ptr = malloc(1);
 	/*printf("\n///c///\n");
 	ft = ft_printf("ft: %c %5c %-4c\n", 'a', '	', '7');
 	true = printf("pf: %c %5c %-4c\n", 'a', '	', '7');
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
-	/*printf("///s///\n");
+	printf("\n");
+	printf("///s///\n");
 	ft = ft_printf("ft: %.15s %10s %-8.35s\n", "Coco", "Tristan", NULL);
 	true = printf("pf: %.15s %10s %-8.35s\n", "Coco", "Tristan", NULL);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
-	/*printf("///p///\n");
-	ft = ft_printf("ft: %----24p et hello %2p %12p\n", ptr, ptr, NULL);
-	true = printf("pf: %----24p et hello %2p %12p\n", ptr, ptr, NULL);
+	printf("\n");
+	printf("///p///\n");
+	ft = ft_printf("ft: %----24p et hello %2p %12p %53p\n", ptr, ptr, NULL, ptr);
+	true = printf("pf: %----24p et hello %2p %12p %53p\n", ptr, ptr, NULL, ptr);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
-	/*printf("///d///\n");
-	ft = ft_printf("ft: %0*d %5.4d  !\n", -8, 55, 24);
-	true = printf("pf: %0*d %5.4d  !\n", -8, 55, 24);
+	printf("\n");
+	printf("///d///\n");
+	ft = ft_printf("ft: %10.*d %7d %-9d %05d %*d %0*d\n", 8, -18, 18, 18, 18, -8, 18, -8, 18);
+	true = printf("pf: %10.*d %7d %-9d %05d %*d %0*d\n", 8, -18, 18, 18, 18, -8, 18, -8, 18);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
-	/*printf("///i///\n");
-	ft = ft_printf("ft: %+i %+7i %-+9i %0+5i\n", 256, 18, -1024, 29);
-	true = printf("pf: %+i %+7i %-+9i %0+5i\n", 256, 18, -1024, 29);
+	printf("\n");
+	printf("///i///\n");
+	ft = ft_printf("ft: %i %7i %-9i %05i\n", 256, 18, -1024, 29);
+	true = printf("pf: %i %7i %-9i %05i\n", 256, 18, -1024, 29);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -92,11 +90,11 @@ int	main(void)
 	printf("value ft: %d value pf: %d\n", l, k);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 
-	/*printf("\n///lc///\n");
-	ft = ft_printf("ft: %lc %5lc %-4lc\n", L'a', L'	', L'7');
-	true = printf("pf: %lc %5lc %-4lc\n", L'a', L'	', L'7');
+	printf("\n///lc///\n");
+	ft = ft_printf("ft: %lc %5lc %-4lc\n", L'Ö', L'	', L'7');
+	true = printf("pf: %lc %5lc %-4lc\n", L'Ö', L'	', L'7');
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -113,8 +111,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///li///\n");
-	ft = ft_printf("ft: %li %+7li %-+9li %0+5li\n", -18l, 18l, 18l, 18l);
-	true = printf("pf: %li %+7li %-+9li %0+5li\n", -18l, 18l, 18l, 18l);
+	ft = ft_printf("ft: %li %7li %-9li %05li\n", -18l, 18l, 18l, 18l);
+	true = printf("pf: %li %7li %-9li %05li\n", -18l, 18l, 18l, 18l);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -144,14 +142,14 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///lld///\n");
-	ft = ft_printf("ft: %10.*lld %7lld %-9lld %05lld\n", 8, -18ll, 18ll, 18ll, 18ll);
-	true = printf("pf: %10.*lld %7lld %-9lld %05lld\n", 8, -18ll, 18ll, 18ll, 18ll);
+	ft = ft_printf("ft: %10.*lld %7lld %-9lld %05lld %*lld %0*lld\n", 8, -18ll, 18ll, 18ll, 18ll, -8, 18ll, -8, 18ll);
+	true = printf("pf: %10.*lld %7lld %-9lld %05lld %*lld %0*lld\n", 8, -18ll, 18ll, 18ll, 18ll, -8, 18ll, -8, 18ll);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///lli///\n");
-	ft = ft_printf("ft: %lli %+7lli %-+9lli %0+5lli\n", -18ll, 18ll, 18ll, 18ll);
-	true = printf("pf: %lli %+7lli %-+9lli %0+5lli\n", -18ll, 18ll, 18ll, 18ll);
+	ft = ft_printf("ft: %lli %7lli %-9lli %05lli\n", -18ll, 18ll, 18ll, 18ll);
+	true = printf("pf: %lli %7lli %-9lli %05lli\n", -18ll, 18ll, 18ll, 18ll);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -188,8 +186,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///hi///\n");
-	ft = ft_printf("ft: %hi %+7hi %-+9hi %0+5hi\n", (short)-18, (short)18, (short)18, (short)18);
-	true = printf("pf: %hi %+7hi %-+9hi %0+5hi\n", (short)-18, (short)18, (short)18, (short)18);
+	ft = ft_printf("ft: %hi %7hi %-9hi %05hi\n", (short)-18, (short)18, (short)18, (short)18);
+	true = printf("pf: %hi %7hi %-9hi %05hi\n", (short)-18, (short)18, (short)18, (short)18);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -225,8 +223,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///hhi///\n");
-	ft = ft_printf("ft: %hhi %+7hhi %-+9hhi %0+5hhi\n", (signed char)'=', (signed char)'=', (signed char)'=', (signed char)'=');
-	true = printf("pf: %hhi %+7hhi %-+9hhi %0+5hhi\n", (signed char)'=', (signed char)'=', (signed char)'=', (signed char)'=');
+	ft = ft_printf("ft: %hhi %7hhi %-9hhi %05hhi\n", (signed char)'=', (signed char)'=', (signed char)'=', (signed char)'=');
+	true = printf("pf: %hhi %7hhi %-9hhi %05hhi\n", (signed char)'=', (signed char)'=', (signed char)'=', (signed char)'=');
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -256,29 +254,17 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");*/
 
-	/*printf("\n///f///\n");
-	ft = ft_printf("ft: \"%15.9f\"\n", 123.456);
-	true = printf("pf: \"%15.9f %          f\"\n", 123.456, 123.456);
+	printf("\n///f///\n");
+	ft = ft_printf("ft: %10.*f %10.2f %7f %-9f %05f %*f %0*f\n", 7, 123.456, 123.456, 0.0/0.0, 123.456, 123.456, -8, 123.456, -8, 123.456);
+	true = printf("pf: %10.*f %10.2f %7f %-9f %05f %*f %0*f\n", 7, 123.456, 123.456, 0.0/0.0, 123.456, 123.456, -8, 123.456, -8, 123.456);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
-	/*printf("\n///e///\n");
-	ft = ft_printf("ft: \"%e\"\n", 123.456456);
-	true = printf("pf: \"%e\"\n", 123.456456);
-	printf("ft: %d\n", ft);
-	printf("pf: %d\n", true);
-	printf("\n");*/
-
-	/*printf("///'///\n");
-	ft = ft_printf("ft: \n");
-	true = printf("pf: %'d\n", 10000);
-	printf("ft: %d\n", ft);
-	printf("pf: %d\n", true);
+	printf("\n");
 
 	//printf("%ls\n", L"licorne salee");
 	//write(1, L"licorne", sizeof(wchar_t) * 7)
 
-	printf("\n///TEST///\n");
+	/*printf("\n///TEST///\n");
 	printf("\n");
 	ft_printf("FT String precision (1.9): %1.9s.\n", "Hello");
 	printf("PF String precision (1.9): %1.9s.\n\n", "Hello");
@@ -389,11 +375,5 @@ int	main(void)
 
 	ft_printf("FT Upper Hex Long long: %llX.\n", (long long) -5);
 	printf("PF Upper Hex Long long: %llX.\n\n", (long long) -5);*/
-
-//	double	fl = 0.0/0.0;
-//	double	dl = 0.7777;
-//
-//	printf("%f, %.2f, %e, %.3e\n", fl, fl, fl, fl);
-//	printf("%f, %.2f, %e, %.9e\n", dl, dl, dl, dl);
 	return (0);
 }

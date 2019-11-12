@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 13:35:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 09:26:14 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 15:39:10 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,14 @@ long long	ft_dtol(double f, size_t *i)
 
 void		ft_doublepres(char *str, size_t **flag, size_t *i, size_t *j)
 {
+	size_t limite;
+
+	limite = flag[2][1];
 	if ((*j) < flag[2][1] && (*i)--)
 	{
-		ft_fielddisplay(flag, (*i) + flag[2][1] + 2, 0, 0);
+		ft_fielddisplay(flag, (*i) + limite + 2, 0, 0);
 		ft_putstr_fd(str, 1);
-		while ((*j)++ < flag[2][1])
+		while ((*j)++ < limite)
 			ft_putchar_fd('0', 1);
 	}
 	else
