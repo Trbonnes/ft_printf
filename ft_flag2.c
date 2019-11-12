@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 11:37:39 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 13:36:57 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,32 @@ int	ft_flagspacesize(va_list *ap, const char *str, int *i, size_t **check)
 	return (ft_atoi(str + *i + j));
 }
 
-int	ft_flagzsize(va_list *ap, const char *str, int *i, int check)
+int	ft_flagzsize(va_list *ap, const char *str, int *i, size_t **check)
 {
 	int j;
+	int r;
 
 	j = 0;
-	if (!check)
+	r = 0;
+	if (!check[1][0])
 		return (0);
 	while (str[(*i) + j] != '0')
 		j++;
 	while ((str[(*i) + j] <= '0' || str[(*i) + j] > '9') && !isalpha(str[(*i) + j]))
 	{
 		if (str[(*i) + j] == '*')
-			return (va_arg(*ap, int));
+		{
+			r = va_arg(*ap, int);
+			if (r < 0)
+			{
+				check[4][0] = 1;
+				check[1][0] = 0;
+				r = r * -1;
+				check[0][0] = 1;
+				check[0][1] = r;
+			}
+			return (r);
+		}
 		j++;
 	}
 	return (ft_atoi(str + *i + j));

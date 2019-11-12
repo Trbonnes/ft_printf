@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 11:34:08 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 11:11:43 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 13:16:58 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_flaghash(const char *str, int *i)
 	return (0);
 }
 
-int	ft_flagmoins(const char *str, int *i)
+int	ft_flagmoins(const char *str, int *i, size_t **flag)
 {
 	int j;
 
@@ -78,7 +78,10 @@ int	ft_flagmoins(const char *str, int *i)
 	while (!ft_isalpha(str[(*i) + j]) && str[(*i) + j] != '%')
 	{
 		if (str[(*i) + j] == '-')
+		{
+			flag[1][0] = 0;
 			return (1);
+		}
 		j++;
 	}
 	return (0);

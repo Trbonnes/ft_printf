@@ -6,21 +6,12 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:51:27 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 09:20:18 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 13:32:09 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "ft_printf.h"
-
-void	ft_plusdisplay(size_t *i, size_t **flag, int neg)
-{
-	if (++(*i) >= 0 && flag[0][0] && !flag[1][0])
-		ft_fielddisplay(flag, *i, 0, neg);
-	ft_putchar_fd('+', 1);
-	if (flag[1][0])
-		ft_fielddisplay(flag, *i, 0, neg);
-}
 
 int		ft_standisplay(const char *str, int *i, int r_value)
 {

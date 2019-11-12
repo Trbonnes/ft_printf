@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 11:34:25 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 13:30:52 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,12 @@ size_t		**ft_checkflag(va_list *ap, const char *str, int *i)
 	flag[1][0] = ft_flagz(str, i);
 	flag[2][0] = ft_flagpre(str, i);
 	flag[3][0] = ft_flaghash(str, i);
-	flag[4][0] = ft_flagmoins(str, i);
-	flag[5][0] = ft_flagplus(str, i);
+	flag[4][0] = ft_flagmoins(str, i, flag);
 	flag[0][1] = ft_flagspacesize(ap, str, i, flag);
-	flag[1][1] = ft_flagzsize(ap, str, i, flag[1][0]);
+	flag[1][1] = ft_flagzsize(ap, str, i, flag);
 	flag[2][1] = ft_flagpresize(ap, str, i, flag[2][0]);
 	flag[3][1] = 0;
 	flag[4][1] = 0;
-	flag[5][1] = 0;
 	return (flag);
 }
 

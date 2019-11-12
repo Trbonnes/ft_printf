@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 13:49:44 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 09:24:05 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 13:34:30 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ size_t	**ft_flaglock(void)
 	size_t	i;
 
 	i = 0;
-	if (!(flag = malloc(sizeof(size_t *) * 6)))
+	if (!(flag = malloc(sizeof(size_t *) * 5)))
 		return (NULL);
-	while (i < 8)
+	while (i < 5)
 	{
 		if (!(flag[i++] = malloc(sizeof(size_t) * 2)))
 			return (NULL);
@@ -79,14 +79,4 @@ void	ft_longputstr(wchar_t *str)
 		c = str[k++];
 		write(1, &c, 1);
 	}
-}
-
-char	*ft_commacpy(char *str)
-{
-	size_t	i;
-
-	i = ft_strlen(str);
-	if (str[0] == '-')
-		i--;
-	return (str);
 }
