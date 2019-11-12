@@ -24,6 +24,8 @@ test:		${NAME}
 test2:		${NAME}
 			${CC} ${CFLAGS} ./libftprintf.a libft/libft.a ./test_main.c -D MINE -D BONUS
 
+bonus:		${NAME}
+
 clean:
 			rm -f ${OBJS}
 			rm -f *.o

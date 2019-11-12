@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 14:25:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 15:40:14 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 15:42:55 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(void)
 {
 	int ft;
 	int true;
-	/*char *ptr;
+	char *ptr;
 	int l;
 	int k;
 	long long int n;
@@ -27,10 +27,10 @@ int	main(void)
 	short int c;
 	short int d;
 	signed char w;
-	signed char q;*/
+	signed char q;
 
-	//ptr = malloc(1);
-	/*printf("\n///c///\n");
+	ptr = malloc(1);
+	printf("\n///c///\n");
 	ft = ft_printf("ft: %c %5c %-4c\n", 'a', '	', '7');
 	true = printf("pf: %c %5c %-4c\n", 'a', '	', '7');
 	printf("ft: %d\n", ft);
@@ -252,7 +252,7 @@ int	main(void)
 	printf("value ft: %hhd value pf: %hhd\n", w, q);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 
 	printf("\n///f///\n");
 	ft = ft_printf("ft: %10.*f %10.2f %7f %-9f %05f %*f %0*f\n", 7, 123.456, 123.456, 0.0/0.0, 123.456, 123.456, -8, 123.456, -8, 123.456);
@@ -264,7 +264,7 @@ int	main(void)
 	//printf("%ls\n", L"licorne salee");
 	//write(1, L"licorne", sizeof(wchar_t) * 7)
 
-	/*printf("\n///TEST///\n");
+	printf("\n///TEST///\n");
 	printf("\n");
 	ft_printf("FT String precision (1.9): %1.9s.\n", "Hello");
 	printf("PF String precision (1.9): %1.9s.\n\n", "Hello");
@@ -374,6 +374,6 @@ int	main(void)
 	printf("PF Upper Hex Long: %lX.\n\n", (long) -5);
 
 	ft_printf("FT Upper Hex Long long: %llX.\n", (long long) -5);
-	printf("PF Upper Hex Long long: %llX.\n\n", (long long) -5);*/
+	printf("PF Upper Hex Long long: %llX.\n\n", (long long) -5);
 	return (0);
 }
