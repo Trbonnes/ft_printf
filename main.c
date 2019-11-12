@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:11:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 11:17:35 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 11:37:13 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(void)
 {
 	int ft;
 	int true;
-	char *ptr;
+	//char *ptr;
 	/*int l;
 	int k;
 	long long int n;
@@ -31,7 +31,7 @@ int	main(void)
 
 //	ft_printf("%d\n", ft_printf("%f\n", 123.456));
 
-	ptr = malloc(1);
+	//ptr = malloc(1);
 	/*printf("\n///c///\n");
 	ft = ft_printf("ft: %c %5c %-4c\n", 'a', '	', '7');
 	true = printf("pf: %c %5c %-4c\n", 'a', '	', '7');
@@ -44,18 +44,18 @@ int	main(void)
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");*/
-	printf("///p///\n");
+	/*printf("///p///\n");
 	ft = ft_printf("ft: %----24p et hello %2p %12p\n", ptr, ptr, NULL);
 	true = printf("pf: %----24p et hello %2p %12p\n", ptr, ptr, NULL);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");
-	/*printf("///d///\n");
-	ft = ft_printf("ft: %4.8d !\n", 2345);
-	true = printf("pf: %4.8d !\n", 2345);
+	printf("\n");*/
+	printf("///d///\n");
+	ft = ft_printf("ft: %4.8d %*d !\n", 2345, -8, 55);
+	true = printf("pf: %4.8d %*d !\n", 2345, -8, 55);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
-	printf("\n");*/
+	printf("\n");
 	/*printf("///i///\n");
 	ft = ft_printf("ft: %+i %+7i %-+9i %0+5i\n", 256, 18, -1024, 29);
 	true = printf("pf: %+i %+7i %-+9i %0+5i\n", 256, 18, -1024, 29);

@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 09:04:57 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 11:35:54 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int			ft_flaghash(const char *str, int *i);
 int			ft_flagmoins(const char *str, int *i);
 int			ft_flagplus(const char *str, int *i);
 int			ft_flagcomma(const char *str, int *i);
-int			ft_flagspacesize(va_list *ap, const char *str, int *i, int check);
+int			ft_flagspacesize(va_list *ap, const char *str, int *i, size_t **c);
 int			ft_flagzsize(va_list *ap, const char *str, int *i, int check);
 int			ft_flagpresize(va_list *ap, const char *str, int *i, int check);
 int			ft_printc(va_list *ap, int r_value, size_t **flag);
