@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 SRCS = libft/*.c ./ft_printf.c ./ft_printf_utils.c ./ft_printf_utils2.c ./ft_convert.c ./ft_indic.c ./ft_indic2.c  ./ft_indiclong.c ./ft_indiclong2.c ./ft_convertbase.c ./ft_longitoa.c ./ft_unsigned_itoa.c ./ft_flag.c ./ft_flag2.c ./ft_indicshort.c ./ft_doublef.c ./ft_doubleitoa.c ./ft_isdouble.c ./ft_iswhat.c ./ft_dtol.c
 OBJS = ${SRCS:.c=.o}
@@ -22,7 +22,7 @@ test:		${NAME}
 			${CC} ${CFLAGS} ./libftprintf.a libft/libft.a ./main.c 
 
 test2:		${NAME}
-			${CC} ${CFLAGS} ./libftprintf.a libft/libft.a ./test_main.c -D MINE -D BONUS
+			${CC} ${CFLAGS} ./libftprintf.a libft/libft.a ./test_main.c
 
 bonus:		${NAME}
 

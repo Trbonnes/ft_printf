@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 14:25:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 16:17:14 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 17:41:50 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///s///\n");
-	ft = ft_printf("ft: %.15s %10s %-8.35s\n", "Coco", "Tristan", NULL);
-	true = printf("pf: %.15s %10s %-8.35s\n", "Coco", "Tristan", NULL);
+	ft = ft_printf("ft: %.15s %100s %-8.35s %.*s\n", "Coco", "Tristan", NULL, -15, "lol");
+	true = printf("pf: %.15s %100s %-8.35s %.*s\n", "Coco", "Tristan", NULL, -15, "lol");
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -49,8 +49,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///d///\n");
-	ft = ft_printf("ft: %10.*d %7d %-9d %05d %*d %0*d\n", 8, -18, 18, 18, 18, -8, 18, -8, 18);
-	true = printf("pf: %10.*d %7d %-9d %05d %*d %0*d\n", 8, -18, 18, 18, 18, -8, 18, -8, 18);
+	ft = ft_printf("ft: %01.*d %7d %-9d %05d %*d %0*d %03.*d\n", 8, -18, 18, 18, 18, -8, 18, -8, 18, -15, 5);
+	true = printf("pf: %01.*d %7d %-9d %05d %*d %0*d %03.*d\n", 8, -18, 18, 18, 18, -8, 18, -8, 18, -15, 5);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");

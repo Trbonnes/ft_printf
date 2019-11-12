@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 16:04:55 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 17:25:11 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		ft_flagzsize(va_list *ap, const char *str, int *i, size_t **check)
 	while (str[(*i) + j] != '0')
 		j++;
 	while ((str[(*i) + j] <= '0' || str[(*i) + j] > '9')
-	&& !isalpha(str[(*i) + j]))
+	&& !isalpha(str[(*i) + j]) && str[(*i) + j] != '.')
 	{
 		if (str[(*i) + j] == '*')
 		{
@@ -75,13 +75,13 @@ int		ft_flagzsize(va_list *ap, const char *str, int *i, size_t **check)
 	return (ft_atoi(str + *i + j));
 }
 
-int		ft_flagpresize(va_list *ap, const char *str, int *i, int check)
+int		ft_flagpresize(va_list *ap, const char *str, int *i, size_t **check)
 {
 	int j;
 	int r_value;
 
 	j = 0;
-	if (!check)
+	if (!check[2][0])
 		return (0);
 	while (str[(*i) + j] != '.')
 		j++;
@@ -91,6 +91,9 @@ int		ft_flagpresize(va_list *ap, const char *str, int *i, int check)
 	else
 		r_value = ft_atoi(str + *i + j);
 	if (r_value < 0)
+	{
+		check[2][0] = 0;
 		return (0);
+	}
 	return (r_value);
 }
