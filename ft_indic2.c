@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:26:47 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 12:26:02 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 10:30:46 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int	ft_printpour(int r_value, size_t **flag)
 	size_t	length;
 
 	flag[2][0] = 0;
+	flag[2][1] = 0;
 	ft_fielddisplay(flag, 1, 0, 0);
 	ft_putchar_fd('%', 1);
 	r_value++;

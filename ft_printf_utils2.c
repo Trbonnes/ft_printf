@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 13:49:44 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 16:21:19 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 09:24:05 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	**ft_flaglock(void)
 	size_t	i;
 
 	i = 0;
-	if (!(flag = malloc(sizeof(size_t *) * 8)))
+	if (!(flag = malloc(sizeof(size_t *) * 6)))
 		return (NULL);
 	while (i < 8)
 	{

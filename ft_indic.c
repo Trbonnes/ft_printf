@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 16:13:38 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 11:08:16 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ int	ft_prints(va_list *ap, int r_value, size_t **flag)
 	size_t	length;
 
 	str = va_arg(*ap, char *);
+	if (str == NULL)
+		str = "(null)";
+	if (flag[2][1] > ft_strlen(str))
+		flag[2][1] = ft_strlen(str);
 	if (!flag[2][0])
 		i = ft_strlen(str);
 	else
@@ -68,8 +72,7 @@ int	ft_printdi(va_list *ap, int r_value, size_t **flag)
 		i--;
 		neg = 1;
 		n++;
-		if (!flag[7][0])
-			r_value++;
+		r_value++;
 	}
 	else if (n[0] != '-' && flag[5][0])
 		ft_plusdisplay(&i, flag, neg);
@@ -80,8 +83,6 @@ int	ft_printdi(va_list *ap, int r_value, size_t **flag)
 	length = ft_length(flag, neg);
 	if (length > i)
 		return (r_value + (int)length);
-	else if (flag[7][0])
-		return (r_value + (int)i + 1);
 	return (r_value + (int)i);
 }
 
