@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 14:25:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 17:41:50 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/12 17:52:00 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -375,5 +375,8 @@ int	main(void)
 
 	ft_printf("FT Upper Hex Long long: %llX.\n", (long long) -5);
 	printf("PF Upper Hex Long long: %llX.\n\n", (long long) -5);
+
+	while(1)
+		;
 	return (0);
 }
