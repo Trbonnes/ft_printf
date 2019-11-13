@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 10:07:02 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/11 09:28:38 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/13 14:33:04 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_indicconvert(va_list *ap, int r_value, char c, size_t **flag)
 		r_value = ft_printn(ap, r_value);
 	else if (c == 'f')
 		r_value = ft_doublef(ap, r_value, flag);
-	return (r_value);
+	return (r_value = ft_freeandreturn(r_value, flag));
 }
 
 int	ft_indichh(va_list *ap, int r_value, char c, size_t **flag)
@@ -53,7 +53,7 @@ int	ft_indichh(va_list *ap, int r_value, char c, size_t **flag)
 		r_value = ft_printhhx(ap, r_value, 1, flag);
 	else if (c == 'n')
 		r_value = ft_printhhn(ap, r_value);
-	return (r_value);
+	return (r_value = ft_freeandreturn(r_value, flag));
 }
 
 int	ft_indich(va_list *ap, int r_value, char c, size_t **flag)
@@ -70,7 +70,7 @@ int	ft_indich(va_list *ap, int r_value, char c, size_t **flag)
 		r_value = ft_printhx(ap, r_value, 1, flag);
 	else if (c == 'n')
 		r_value = ft_printhn(ap, r_value);
-	return (r_value);
+	return (r_value = ft_freeandreturn(r_value, flag));
 }
 
 int	ft_indiclong(va_list *ap, int r_value, char c, size_t **flag)
@@ -93,5 +93,5 @@ int	ft_indiclong(va_list *ap, int r_value, char c, size_t **flag)
 		r_value = ft_println(ap, r_value);
 	else if (c == 'f')
 		r_value = ft_doublef(ap, r_value, flag);
-	return (r_value);
+	return (r_value = ft_freeandreturn(r_value, flag));
 }

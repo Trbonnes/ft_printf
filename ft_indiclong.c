@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 13:59:19 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 13:40:15 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/13 17:17:58 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_printlc(va_list *ap, int r_value, size_t **flag)
 	write(1, &c, 1);
 	ft_fielddisplay(flag, 1, 1, 0);
 	r_value++;
-	length = ft_length(flag, 0);
+	length = ft_length(flag, 0, NULL);
 	if (length > 1)
 		return (r_value + (int)((length - 1)));
 	return (r_value);
@@ -49,7 +49,7 @@ int		ft_printls(va_list *ap, int r_value, size_t **flag)
 	ft_strllcpy(cpy, str, i + 1);
 	ft_longputstr(cpy);
 	ft_fielddisplay(flag, i, 1, 0);
-	length = ft_length(flag, 0);
+	length = ft_length(flag, 0, cpy);
 	if (length > i)
 		return (r_value + (int)length);
 	return (r_value + (int)i);
@@ -77,10 +77,8 @@ int		ft_printldli(va_list *ap, int r_value, size_t **flag)
 	ft_fielddisplay(flag, i, 0, neg);
 	ft_putstr_fd(n, 1);
 	ft_fielddisplay(flag, i, 1, neg);
-	length = ft_length(flag, neg);
-	if (length > i)
-		return (r_value + (int)length);
-	return (r_value + (int)i);
+	length = (neg ? ft_length(flag, neg, --n) : ft_length(flag, neg, n));
+	return (r_value + (length > i ? (int)length : (int)i));
 }
 
 int		ft_printlu(va_list *ap, int r_value, size_t **flag)
@@ -96,7 +94,7 @@ int		ft_printlu(va_list *ap, int r_value, size_t **flag)
 	ft_fielddisplay(flag, i, 0, 0);
 	ft_putstr_fd(n, 1);
 	ft_fielddisplay(flag, i, 1, 0);
-	length = ft_length(flag, 0);
+	length = ft_length(flag, 0, n);
 	if (length > i)
 		return (r_value + (int)length);
 	return (r_value + (int)i);

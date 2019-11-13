@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 14:25:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 17:52:00 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/13 17:16:07 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	main(void)
 	printf("pf: %d\n", true);
 	printf("\n");
 	printf("///p///\n");
-	ft = ft_printf("ft: %----24p et hello %2p %12p %53p\n", ptr, ptr, NULL, ptr);
-	true = printf("pf: %----24p et hello %2p %12p %53p\n", ptr, ptr, NULL, ptr);
+	ft = ft_printf("ft: %----24p et hello %2p %12.p %53p\n", ptr, ptr, NULL, ptr);
+	true = printf("pf: %----24p et hello %2p %12.p %53p\n", ptr, ptr, NULL, ptr);
 	printf("ft: %d\n", ft);
 	printf("pf: %d\n", true);
 	printf("\n");
@@ -376,7 +376,7 @@ int	main(void)
 	ft_printf("FT Upper Hex Long long: %llX.\n", (long long) -5);
 	printf("PF Upper Hex Long long: %llX.\n\n", (long long) -5);
 
-	while(1)
-		;
+	//while(1)
+	//	;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:51:27 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 13:32:09 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/13 14:41:08 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,17 @@ void	ft_fielddisplay(size_t **flag, size_t i, int bool, int neg)
 	if (bool && flag[4][0] && flag[0][1] > i)
 		while (l++ < (flag[0][1] - i))
 			ft_putchar_fd(' ', 1);
+}
+
+int			ft_freeandreturn(int r_value, size_t **flag)
+{
+	size_t i;
+
+	i = 0;
+	while (i < 5)
+		if (flag[i] != NULL)
+			free(flag[i++]);
+	if (flag != NULL)
+		free(flag);
+	return (r_value);
 }

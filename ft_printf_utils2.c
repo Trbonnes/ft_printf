@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 13:49:44 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 17:05:27 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/13 14:57:59 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ size_t	**ft_flaglock(void)
 	return (flag);
 }
 
-size_t	ft_length(size_t **flag, int neg)
+size_t	ft_length(size_t **flag, int neg, void *obj)
 {
 	size_t length;
 
@@ -42,6 +42,8 @@ size_t	ft_length(size_t **flag, int neg)
 		length = length + flag[2][1];
 	else if (flag[2][0])
 		length = length + flag[2][1];
+	if (obj)
+		free(obj);
 	return (length);
 }
 

@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 13:35:37 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 16:08:21 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/13 14:55:20 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int			ft_doublef(va_list *ap, int r_value, size_t **flag)
 	else
 		ft_doublestd(str, flag, &i, &j);
 	ft_fielddisplay(flag, i + j + 1, 1, 0);
-	length = ft_length(flag, 0);
+	length = ft_length(flag, 0, str);
 	if (length > i + j + 1)
 		return (r_value + (int)length);
 	return (r_value + i + j + 1);
