@@ -6,12 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 08:22:04 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/13 14:54:54 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/14 10:52:03 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int		ft_printhx(va_list *ap, int r_value, int maj, size_t **flag)
 {

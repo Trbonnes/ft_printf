@@ -6,12 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 08:51:27 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/13 14:41:08 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/14 10:51:58 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int		ft_standisplay(const char *str, int *i, int r_value)
 {
@@ -74,7 +73,7 @@ void	ft_fielddisplay(size_t **flag, size_t i, int bool, int neg)
 			ft_putchar_fd(' ', 1);
 }
 
-int			ft_freeandreturn(int r_value, size_t **flag)
+int		ft_freeandreturn(int r_value, size_t **flag)
 {
 	size_t i;
 

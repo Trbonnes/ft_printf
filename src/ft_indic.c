@@ -6,12 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 09:46:39 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/13 15:54:57 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/14 10:52:06 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int	ft_printc(va_list *ap, int r_value, size_t **flag)
 {

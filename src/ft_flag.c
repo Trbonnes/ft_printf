@@ -6,11 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 11:34:08 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/12 16:47:47 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/14 10:52:08 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int	ft_flagspace(const char *str, int *i)
 {

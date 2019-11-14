@@ -1,51 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils2.c                                 :+:      :+:    :+:   */
+/*   ft_wchar.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/28 13:49:44 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/14 10:00:13 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/11/14 10:31:32 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/11/14 10:51:54 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "ft_printf.h"
-
-size_t	**ft_flaglock(void)
-{
-	size_t	**flag;
-	size_t	i;
-
-	i = 0;
-	if (!(flag = malloc(sizeof(size_t *) * 5)))
-		return (NULL);
-	while (i < 5)
-	{
-		if (!(flag[i++] = malloc(sizeof(size_t) * 2)))
-			return (NULL);
-	}
-	return (flag);
-}
-
-size_t	ft_length(size_t **flag, int neg, void *obj)
-{
-	size_t length;
-
-	length = 0;
-	if (flag[0][0] && !flag[1][0] && flag[0][1] > flag[2][1])
-		length = length + (flag[0][1] - flag[2][1] - (size_t)neg);
-	if (flag[1][0] && flag[1][1] && flag[1][1] > flag[2][1])
-		length = length + (flag[1][1] - flag[2][1] - (size_t)neg);
-	if (flag[2][0] && flag[1][0])
-		length = length + flag[2][1];
-	else if (flag[2][0])
-		length = length + flag[2][1];
-	if (obj)
-		free(obj);
-	return (length);
-}
+#include "../includes/ft_printf.h"
 
 int		ft_insertwcharinchar(wchar_t wchar, char *cpy, int i)
 {
@@ -98,7 +63,7 @@ char	*ft_wchartochar(wchar_t *str)
 	return (cpy);
 }
 
-size_t		ft_wbytelen(wchar_t *str)
+size_t	ft_wbytelen(wchar_t *str)
 {
 	size_t	len;
 	size_t	bytelen;
@@ -114,7 +79,7 @@ size_t		ft_wbytelen(wchar_t *str)
 	return (bytelen);
 }
 
-size_t		ft_wstrlen(wchar_t *str)
+size_t	ft_wstrlen(wchar_t *str)
 {
 	size_t	len;
 
@@ -126,7 +91,7 @@ size_t		ft_wstrlen(wchar_t *str)
 	return (len);
 }
 
-int			ft_wcharlen(wchar_t wchar)
+int		ft_wcharlen(wchar_t wchar)
 {
 	if (wchar <= 0x7f)
 		return (1);

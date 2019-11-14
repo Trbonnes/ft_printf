@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_indiclong2.c                                    :+:      :+:    :+:   */
+/*   ft_indic2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 15:22:46 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/13 14:54:29 by trbonnes         ###   ########.fr       */
+/*   Created: 2019/10/22 08:26:47 by trbonnes          #+#    #+#             */
+/*   Updated: 2019/11/14 10:52:28 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
-int		ft_printlx(va_list *ap, int r_value, int maj, size_t **flag)
+int	ft_printx(va_list *ap, int r_value, int maj, size_t **flag)
 {
 	char	*str;
 	size_t	nb;
@@ -20,7 +20,7 @@ int		ft_printlx(va_list *ap, int r_value, int maj, size_t **flag)
 	size_t	length;
 
 	i = -1;
-	nb = (size_t)va_arg(*ap, unsigned long int);
+	nb = (size_t)va_arg(*ap, unsigned int);
 	str = ft_convert_base(nb);
 	if (flag[2][0] && flag[2][1] == 0 && str[0] == '0' && i--)
 		str[0] = '\0';
@@ -39,11 +39,27 @@ int		ft_printlx(va_list *ap, int r_value, int maj, size_t **flag)
 	return (r_value + (int)i);
 }
 
-int		ft_println(va_list *ap, int r_value)
+int	ft_printn(va_list *ap, int r_value)
 {
-	long long int *n;
+	int *n;
 
-	n = va_arg(*ap, long long int *);
+	n = va_arg(*ap, int *);
 	*n = r_value;
+	return (r_value);
+}
+
+int	ft_printpour(int r_value, size_t **flag)
+{
+	size_t	length;
+
+	flag[2][0] = 0;
+	flag[2][1] = 0;
+	ft_fielddisplay(flag, 1, 0, 0);
+	ft_putchar_fd('%', 1);
+	r_value++;
+	ft_fielddisplay(flag, 1, 1, 0);
+	length = ft_length(flag, 0, NULL);
+	if (length > 1)
+		return (r_value + (int)((length - 1)));
 	return (r_value);
 }

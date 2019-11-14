@@ -6,12 +6,11 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/14 09:53:31 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/14 10:51:56 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 size_t		**ft_checkflag(va_list *ap, const char *str, int *i)
 {
