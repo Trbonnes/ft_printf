@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 13:59:19 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/13 17:17:58 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/14 10:06:22 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,56 @@
 
 int		ft_printlc(va_list *ap, int r_value, size_t **flag)
 {
-	char	c;
+	wchar_t	c;
+	wchar_t str[2];
+	char	*cpy;
 	size_t	length;
+	size_t	i;
 
-	c = (char)va_arg(*ap, wint_t);
-	ft_fielddisplay(flag, 1, 0, 0);
-	write(1, &c, 1);
-	ft_fielddisplay(flag, 1, 1, 0);
-	r_value++;
-	length = ft_length(flag, 0, NULL);
-	if (length > 1)
-		return (r_value + (int)((length - 1)));
-	return (r_value);
+	c = va_arg(*ap, wchar_t);
+	str[0] = c;
+	str[1] = '\0';
+	if (str[0] < 0 || (str[0] > 55295 && str[0] < 57344) || str[0] > 1114111)
+		return (-1);
+	cpy = ft_wchartochar(str);
+	i = ft_strlen(cpy);
+	ft_fielddisplay(flag, i, 0, 0);
+	ft_putstr_fd(cpy, 1);
+	ft_fielddisplay(flag, i, 1, 0);
+	if (c == 0 && !flag[0][0])
+		i = 1;
+	length = ft_length(flag, 0, cpy);
+	if (length > i)
+		return (r_value + (int)length);
+	return (r_value + (int)i);
 }
 
 int		ft_printls(va_list *ap, int r_value, size_t **flag)
 {
 	wchar_t	*str;
-	wchar_t	*cpy;
+	char	*cpy;
 	size_t	i;
 	size_t	length;
 
-	i = 0;
+	i = -1;
 	str = va_arg(*ap, wchar_t *);
+	while (str[++i])
+		if (str[i] < 0 || (str[i] > 55295 && str[i] < 57344)
+		|| str[i] > 1114111)
+			return (-1);
+	cpy = ft_wchartochar(str);
 	if (!flag[2][0])
-		while (str[i])
-			i++;
+		i = ft_strlen(cpy);
 	else
+	{
 		i = flag[2][1];
+		cpy[i] = '\0';
+	}
 	ft_fielddisplay(flag, i, 0, 0);
-	if (!(cpy = malloc(sizeof(char) * i + 1)))
-		return (-1);
-	ft_strllcpy(cpy, str, i + 1);
-	ft_longputstr(cpy);
+	ft_putstr_fd(cpy, 1);
 	ft_fielddisplay(flag, i, 1, 0);
 	length = ft_length(flag, 0, cpy);
-	if (length > i)
-		return (r_value + (int)length);
-	return (r_value + (int)i);
+	return (r_value + (length > i ? (int)length : (int)i));
 }
 
 int		ft_printldli(va_list *ap, int r_value, size_t **flag)

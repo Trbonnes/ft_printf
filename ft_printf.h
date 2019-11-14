@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:53:05 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/13 14:52:25 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/14 08:48:14 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,13 @@ void		ft_doublepres(char *str, size_t **flag, size_t *i, size_t *j);
 int			ft_standisplay(const char *str, int *i, int r_value);
 void		ft_fielddisplay(size_t **flag, size_t i, int bool, int neg);
 void		ft_displaypres(size_t **flag, size_t i, int bool, int neg);
-void		ft_longputstr(wchar_t *str);
+int			ft_insertwcharinchar(wchar_t wchar, char *cpy, int i);
+char		*ft_wchartochar(wchar_t *str);
+size_t		ft_wbytelen(wchar_t *str);
+size_t		ft_wstrlen(wchar_t *str);
+int			ft_wcharlen(wchar_t wchar);
 int			ft_flagz(const char *str, int *i);
 size_t		**ft_flaglock(void);
-size_t		ft_strllcpy(wchar_t *dest, wchar_t *src, size_t n);
 size_t		ft_nbrlen(size_t res_tmp, size_t base_len);
 char		*ft_convert_base(size_t nbr);
 char		*ft_longitoa(long long int n);

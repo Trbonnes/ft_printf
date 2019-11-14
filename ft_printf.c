@@ -6,7 +6,7 @@
 /*   By: trbonnes <trbonnes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:51:38 by trbonnes          #+#    #+#             */
-/*   Updated: 2019/11/13 14:28:25 by trbonnes         ###   ########.fr       */
+/*   Updated: 2019/11/14 09:53:31 by trbonnes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,12 @@ int			ft_printf(const char *str, ...)
 	va_start(ap, str);
 	i = 0;
 	r_value = 0;
-	while (str[i] != '\0')
+	while (str[i] != '\0' && r_value != -1)
 	{
 		if (str[i] == '%')
 		{
-			r_value = ft_flag(&ap, r_value, str, &i);
+			if ((r_value = ft_flag(&ap, r_value, str, &i)) == -1)
+				break ;
 			i++;
 		}
 		else
